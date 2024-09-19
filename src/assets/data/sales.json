@@ -1,0 +1,15 @@
+[
+    {
+        "Id": "1",
+        "Cliente": "João Henrique",
+        "CPFCNPJ": "12345678910",
+        "item": [
+            {
+                "id": "1",
+                "produto": "Refil Nativa Spa Morango Ruby",
+                "marca": "Boticário",
+                "quantidade": 5
+            }
+       ]
+    }
+]
