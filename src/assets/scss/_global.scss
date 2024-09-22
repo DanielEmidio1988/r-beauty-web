@@ -1,6 +1,12 @@
 //Author: Daniel Emidio
 //Github: https://github.com/DanielEmidio1988
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 .container{
     width: 100%;
     max-width: 1200px;

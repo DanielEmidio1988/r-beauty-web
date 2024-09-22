@@ -1,4 +1,4 @@
-# Skeletor-Theme
+# r-Beauty
 ![React](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
 ![Typescript](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
 ![SCSS](https://img.shields.io/badge/Sass-CC6699.svg?style=for-the-badge&logo=Sass&logoColor=white)
@@ -22,7 +22,6 @@
 ## 📢 Últimas Atualizações
 Descrição em breve
 
-
 ## 📜 Escopo do Projeto
 Descrição em breve
 
@@ -38,7 +37,17 @@ Descrição em breve
 - `📂 tests ` - Pasta contendo a estrutura de testes unitários
 
 ### Tecnologias e Recursos
-Descrição em breve
+Abaixo, listo todas as tecnologias e bibliotecas utilizadas:
+
+* **React.js:** para criação de interfaces mais intuitiva e eficiente, com a utilização de componentes reutilizáveis, facilitando a manutenção e escalabilidade do projeto.
+* **Typescript:** para ajudar a prevenir erros comuns em Javascript, como erros de tipo e nulos, tornando o código mais confiável, auxiliando a identificação de erros em tempo de desenvolvimento.
+* **SCSS:** para permitir organizar os estilos CSS de forma mais lógica e hierárquica.
+* **Leaflet:** para criação de mapas interativos personalizados, ampla documentação e comunidade ativa, facilitando a resolução de problemas.
+* **React Router Dom:** para criação de multiplas rotas e páginas, pensando em escalabilidade e crescimento do projeto.
+* **Axios:** biblioteca JavaScript que facilita as requisições HTTP a partir do navegador ou servidor utilizando NodeJs. Amplamente utilizada para requisição de API de terceiros.
+* **Google Charts:** biblioteca de gráficos do Google para o React, que fornece uma interface para o Google Chart, que será responsável para construção de gráficos de dados poderosa.
+* **Date Range Picker:** biblioteca que permite o gerenciamento de datas.
+* **UUID:** biblioteca para o controle de id de cadastros.
 
 ## 🎨 Layout
 
