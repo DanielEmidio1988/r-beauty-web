@@ -3,6 +3,7 @@ import HomePage from "../pages/home";
 import Page404 from "../pages/404";
 import LoginPage from "../pages/user/login";
 import SignUpPage from "../pages/user/signup";
+import HomeAdminPage from "../pages/admin/home";
 
 function Router(){
     return(
@@ -12,6 +13,7 @@ function Router(){
                 <Route path="*" element={<Page404/>}/>
                 <Route path="/user/login" element={<LoginPage/>}/>
                 <Route path="/user/signup" element={<SignUpPage/>}/>
+                <Route path="/admin" element={<HomeAdminPage/>}/>
             </Routes>
         </BrowserRouter>
     )

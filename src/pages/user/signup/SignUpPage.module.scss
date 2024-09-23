@@ -1,0 +1,35 @@
+@import "../../../assets/scss/styled.scss";
+
+.signupPage{
+    height: 100vh;
+    background-color: $primary-color;
+
+    .formSection{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .formSection__title{
+            text-align: center;
+        }
+
+        .formSection__formArea{
+            display: flex;
+            justify-content: center;
+
+            .formSection__formArea___form{
+                width: 80%;
+                min-width: 500px;
+                padding: 20px 16px;
+                background-color: $white-color;
+                border-radius: 12px;
+            }
+
+        }
+
+
+    }
+
+}
