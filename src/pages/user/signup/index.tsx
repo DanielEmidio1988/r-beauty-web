@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { goToHomePage, goToLoginPage } from "../../../routes/navigate";
+import { goToHomePage, goToLoginPage, goToAdminPage } from "../../../routes/navigate";
 import { IUser } from "../../../types/IUser";
+import style from "./SignUpPage.module.scss";
 
 function SignUpPage(){
     const {register, handleSubmit, formState: {errors}} =useForm<IUser>();
@@ -14,13 +15,13 @@ function SignUpPage(){
     }
 
     return(
-        <main>
-            <section>
-                <div>
-                    {/* Intro text */}
+        <main className={`${style.signupPage} width_100`}>
+            <section className={`${style.formSection} width_100`}>
+                <div className={`${style.formSection__title} width_100`}>
+                    <h3>Cadastro de Usuário</h3>
                 </div>
-                <div>
-                    <form onSubmit={handleSubmit(onSubmit)}>
+                <div className={`${style.formSection__formArea} width_100`}>
+                    <form onSubmit={handleSubmit(onSubmit)} className={`${style.formSection__formArea___form} width_100`}>
                         <div>
                             <div>
                                 <label>Nome</label>
@@ -87,7 +88,7 @@ function SignUpPage(){
                             </div>
                         </div>
                         <div>
-                            <button onClick={()=> goToHomePage(navigate)}>Registrar</button>
+                            <button onClick={()=> goToAdminPage(navigate)}>Registrar</button>
                             <button onClick={()=> goToLoginPage(navigate)}>Voltar</button>
                         </div>
 

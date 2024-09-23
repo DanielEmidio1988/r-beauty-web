@@ -1,0 +1,26 @@
+@import "../../../assets/scss/styled.scss";
+
+.homepageadmin{
+    
+    .dashboardSection{
+        min-height: 100vh;
+        display: flex;
+        justify-content: flex-end;
+        background-color: $gray-color-medium;
+
+        .dashboardSection___dashboardArea{
+            width: calc(100% - 200px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 16px;
+
+            article{
+                background-color: $white-color;
+                border-radius: 12px;
+                height: 200px;
+                box-shadow: 4px 4px 4px $gray-color-strong;
+            }
+        }
+    }
+}

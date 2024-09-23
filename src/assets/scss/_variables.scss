@@ -3,7 +3,7 @@
 
 // Fonts
 $font-base: "Montserrat", sans-serif;
-$font-size-h1: 2.5rem;
+$font-size-h1: 2.2rem;
 $font-size-h1-responsive: 2rem;
 $font-size-h2: 2rem;
 $font-size-h2-responsive: 1.8rem;
@@ -12,22 +12,35 @@ $font-size-h3-responsive: 1.6rem;
 $font-size-h4: 1.5rem;
 $font-size-h4-responsive: 1.4rem;
 $font-size-h5: 1.25rem;
-$font-size-h6: 1.75rem;
+$font-size-h6: 1.15rem;
 $font-size-base: 1rem;
 
 // Colors
-$dark-color: #333;
+$dark-color: #313A46;
 $white-color: #FFF;
 $black-color: #000;
-$gray-color: #CCCCCC;
-$gray-color-strong: #AAA;
-$alert-color: #d0342c;
-$sucess-color: #63BB0E;
-$primary-color: #006DB2;
-$secondary-color: #006DB2;
-$tertiary-color: #006DB2;
+$gray-color: #F9FAFD;
+$gray-color-medium: #EDF1F6;
+$gray-color-strong: #6C757D;
+$alert-color: #FA5D7C;
+$sucess-color: #B5E61D;
+$primary-color: #6496D1;
+$secondary-color: #53C6B7;
+$tertiary-color: #C19BC6;
 
 //Paddings
 $inner-padding-lg: 70px 0;
 $inner-padding-md: 50px 0;
 $inner-padding-sm: 20px 0;
+
+//width
+$width-10: 10%;
+$width-20: 20%;
+$width-30: 30%;
+$width-40: 40%;
+$width-50: 50%;
+$width-60: 60%;
+$width-70: 70%;
+$width-80: 80%;
+$width-90: 90%;
+$width-100: 100%;

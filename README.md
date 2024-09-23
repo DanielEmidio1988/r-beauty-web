@@ -20,7 +20,11 @@
 - ⏳Em andamento
 
 ## 📢 Últimas Atualizações
-Descrição em breve
+* **Versão:** 2.0
+* **Data de Atualização:** 19/09/2024
+
+O **r-Beauty** está em constante atualização para oferecer uma melhor experiência aos usuários. As melhorias serão aplicadas de acordo com os feedbacks, sugestões e estudo de mercado.
+1. Migração de sistema do Google App Script/Google Sheets para React.Js, permitindo uma interface mais moderna, dinâmica e eficiente; 
 
 ## 📜 Escopo do Projeto
 Descrição em breve
@@ -48,6 +52,8 @@ Abaixo, listo todas as tecnologias e bibliotecas utilizadas:
 * **Google Charts:** biblioteca de gráficos do Google para o React, que fornece uma interface para o Google Chart, que será responsável para construção de gráficos de dados poderosa.
 * **Date Range Picker:** biblioteca que permite o gerenciamento de datas.
 * **UUID:** biblioteca para o controle de id de cadastros.
+* **React Hook Form:** para o gerenciamento de formulários.
+* **React Icons:** biblioteca de icones para tornar a navegação mais intuitiva.
 
 ## 🎨 Layout
 
