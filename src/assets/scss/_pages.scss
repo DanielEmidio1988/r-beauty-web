@@ -1,0 +1,19 @@
+@import "./variables";
+
+.pageadmin{
+    
+    .sectionarea_admin{
+        min-height: 100vh;
+        display: flex;
+        justify-content: flex-end;
+        background-color: $gray-color-medium;
+
+        .dataarea{
+            width: calc(100% - 200px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 0 16px;
+        }
+    }
+}

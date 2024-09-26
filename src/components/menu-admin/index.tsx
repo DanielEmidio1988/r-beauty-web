@@ -39,6 +39,10 @@ function MenuAdmin(){
             item: "Produto",
             submenu: [
                 {
+                    item: "Cadastro de Categoria",
+                    url_item: ""
+                },
+                {
                     item: "Cadastro de Produtos",
                     url_item: ""
                 },
