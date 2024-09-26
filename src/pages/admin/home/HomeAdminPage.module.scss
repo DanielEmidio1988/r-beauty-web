@@ -14,13 +14,11 @@
             flex-direction: column;
             gap: 20px;
             padding: 0 16px;
+        }
 
-            article{
-                background-color: $white-color;
-                border-radius: 12px;
-                height: 200px;
-                box-shadow: 4px 4px 4px $gray-color-strong;
-            }
+        .dashboardSection___dashboardArea___doublecolumn{
+            display: flex;
+            gap: 20px;
         }
     }
 }
