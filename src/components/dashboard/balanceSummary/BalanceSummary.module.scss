@@ -1,0 +1,33 @@
+@import "../../../assets/scss/styled.scss";
+
+.balanceSummary{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .balanceSummary___item{
+        width: 33.33%;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 2vw;
+        border-radius: 12px;
+        background-color: $white-color;
+        box-shadow: 4px 4px 4px $gray-color-medium;
+        position: relative;
+        cursor: pointer;
+
+        .balanceSummary___item___value{
+            font-weight: 700;
+        }
+
+        .balanceSummary___item___description{
+            text-transform: uppercase;
+            color: $gray-color-strong;
+            font-weight: 500;
+        }
+        
+    }
+
+}

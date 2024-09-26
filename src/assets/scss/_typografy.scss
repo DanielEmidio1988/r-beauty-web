@@ -51,6 +51,12 @@ label{
     color: $dark-color;
 }
 
+span{
+    font-size: $font-size-span;
+    font-weight: 300;
+    color: $dark-color;
+}
+
 @media(max-width: 765px){
 
     h1{

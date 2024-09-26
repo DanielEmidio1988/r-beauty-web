@@ -24,7 +24,7 @@
 * **Data de Atualização:** 19/09/2024
 
 O **r-Beauty** está em constante atualização para oferecer uma melhor experiência aos usuários. As melhorias serão aplicadas de acordo com os feedbacks, sugestões e estudo de mercado.
-1. Migração de sistema do Google App Script/Google Sheets para React.Js, permitindo uma interface mais moderna, dinâmica e eficiente; 
+1. Migração de sistema do Google App Script/Google Sheets para React.Js, permitindo uma interface mais moderna, dinâmica e eficiente;  
 
 ## 📜 Escopo do Projeto
 Descrição em breve
@@ -74,7 +74,7 @@ Antes de iniciar, certifique-se de ter o [Node](https://nodejs.org/pt/download/p
 Abra o terminal Git na sua máquina, dentro da pasta onde deseja baixar o projeto, e execute o comando:
 
 ```
-git clone <<REPOSITÓRIO>>
+git clone https://github.com/DanielEmidio1988/r-beauty-web.git
 ```
 
 ### Instalação pacotes NPM
