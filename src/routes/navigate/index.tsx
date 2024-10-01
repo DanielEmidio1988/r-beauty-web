@@ -16,10 +16,10 @@ export const goToAdminPage = (navigate: NavigateFunction) => {
     navigate('/admin');
 };
 
-export const goToRegisterBrandPage = (navigate: NavigateFunction) => {
-    navigate('/admin/product/register-brand');
+export const goToBrandsPage = (navigate: NavigateFunction) => {
+    navigate('/admin/product/brands');
 };
 
-export const goToRegisterProductPage = (navigate: NavigateFunction) => {
-    navigate('/admin/product/register-product');
+export const goToProductsPage = (navigate: NavigateFunction) => {
+    navigate('/admin/product/products');
 };

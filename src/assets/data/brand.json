@@ -4,14 +4,14 @@
         "id_user": "1",
         "name": "Boticário",
         "profit": 15,
-        "brand_unavailable": true
+        "brand_unavailable": false
     },
     {
         "id": "2",
         "id_user": "1",
         "name": "Avon",
         "profit": 30,
-        "brand_unavailable": true
+        "brand_unavailable": false
     },
     {
         "id": "3",
@@ -25,27 +25,27 @@
         "id_user": "1",
         "name": "Natura",
         "profit": 30,
-        "brand_unavailable": true
+        "brand_unavailable": false
     },
     {
         "id": "5",
         "id_user": "1",
         "name": "Eudora",
         "profit": 15,
-        "brand_unavailable": true
+        "brand_unavailable": false
     },
     {
         "id": "6",
         "id_user": "3",
         "name": "Avon",
         "profit": 30,
-        "brand_unavailable": true
+        "brand_unavailable": false
     },
     {
         "id": "6",
         "id_user": "1",
         "name": "Marca Pessoal",
         "profit": 100,
-        "brand_unavailable": false
+        "brand_unavailable": true
     }
 ]

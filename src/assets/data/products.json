@@ -10,6 +10,7 @@
         "sale_value": 43.90,
         "promotional_value": 37.50,
         "active_promotion": true,
+        "promotion_name": "",
         "promotion_expiration_date": "26/12/2024 23:59:59",
         "stock": 4,
         "product_unavailable": false
@@ -25,6 +26,7 @@
         "sale_value": 43.90,
         "promotional_value": 37.50,
         "active_promotion": true,
+        "promotion_name": "",
         "promotion_expiration_date": "26/12/2024 23:59:59",
         "stock": 7,
         "product_unavailable": false
@@ -40,6 +42,7 @@
         "sale_value": 43.90,
         "promotional_value": 37.50,
         "active_promotion": true,
+        "promotion_name": "",
         "promotion_expiration_date": "26/12/2024 23:59:59",
         "stock": 0,
         "product_unavailable": true
@@ -55,6 +58,7 @@
         "sale_value": 34.50,
         "promotional_value": 29.99,
         "active_promotion": true,
+        "promotion_name": "",
         "promotion_expiration_date": "26/12/2024 23:59:59",
         "stock": 9,
         "product_unavailable": false
@@ -70,6 +74,7 @@
         "sale_value": 22.37,
         "promotional_value": 0,
         "active_promotion": false,
+        "promotion_name": "",
         "promotion_expiration_date": "",
         "stock": 9,
         "product_unavailable": false
@@ -85,6 +90,7 @@
         "sale_value": 189.90,
         "promotional_value": 0,
         "active_promotion": false,
+        "promotion_name": "",
         "promotion_expiration_date": "",
         "stock": 9,
         "product_unavailable": false

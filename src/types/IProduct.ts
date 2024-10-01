@@ -11,6 +11,7 @@ export interface IProduct{
     sale_value: number;
     promotional_value: number;
     active_promotion: boolean;
+    promotion_name: string;
     promotion_expiration_date: string;
     stock: number;
     product_unavailable: boolean;

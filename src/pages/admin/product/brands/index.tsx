@@ -67,8 +67,8 @@ function RegisterBrandPage() { //Alterar para register Brand
                                             <td><span>{dataBrand.name}</span></td>
                                             <td><span>{dataBrand.profit} %</span></td>
                                             <td>
-                                                <span className={`${dataBrand.brand_unavailable ? `inactive_item` : `active_item`}`}>
-                                                    {dataBrand.brand_unavailable ? `Ativo ` : `Inativo`}
+                                                <span className={`${!dataBrand.brand_unavailable ? `inactive_item` : `active_item`}`}>
+                                                    {!dataBrand.brand_unavailable ? `Ativo ` : `Inativo`}
                                                 </span>    
                                             </td>
                                         </tr>
