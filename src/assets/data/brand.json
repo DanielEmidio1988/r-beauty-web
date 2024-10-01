@@ -40,5 +40,12 @@
         "name": "Avon",
         "profit": 30,
         "brand_unavailable": true
+    },
+    {
+        "id": "6",
+        "id_user": "1",
+        "name": "Marca Pessoal",
+        "profit": 100,
+        "brand_unavailable": false
     }
 ]

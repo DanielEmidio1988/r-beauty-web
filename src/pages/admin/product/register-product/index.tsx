@@ -1,16 +1,24 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import { IProduct } from "../../../../types/IProduct";
 import MenuAdmin from "../../../../components/menu-admin";
+import HeaderAdmin from "../../../../components/header/header-admin";
+import products from "../../../../assets/data/products.json";
+import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
 
 function RegisterProductPage(){
-    const productsFields = [
-        {
-            field: "", label: "", type: "" 
-        }
-    ]
-    const [dataProducts, setDataProducts] = useState([])
+    const titlePage: string = "Cadastro de Produtos";
+    const [dataProducts, setDataProducts] = useState<IProduct[] | []>([]);
+    const [totalRegister, setTotalRegister] = useState<String>("0 registro");
+
+    useEffect(()=>{
+        getAllProducts();
+    })
 
     function getAllProducts(){
-
+        const allProducts = products
+        const totalProducts = allProducts.length > 1 ? `${allProducts.length} registros` : `${allProducts.length} registro`;
+        setDataProducts(allProducts);
+        setTotalRegister(totalProducts);
     }
 
     function newProduct(){
@@ -24,38 +32,68 @@ function RegisterProductPage(){
     return(
         <main className={`pageadmin`}>
             <section className={`sectionarea_admin`}>
-                <MenuAdmin/>
+                <MenuAdmin />
                 <div className={`dataarea`}>
-                    <div className={``}>
-
-                        <button>Novo</button>
-                        {/* Filtro */}
-
+                    <HeaderAdmin/>
+                    <div className={`infopage`}>
+                        <div className={`titlearea`}>
+                            <h6 className={`title`}>{titlePage}</h6>
+                            <span className={`counter`}>{totalRegister}</span>
+                        </div>                      
                     </div>
-                    <div className={`tabledata`}>
-                        <table>
-                            <tr>
-                                <th>Marca</th>
-                                <th>Lucratividade</th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span>Boticário</span>
-                                </td>
-                                <td>
-                                    {/* Icones editar/excluir */}
-                                </td>
-                            </tr>
-                        </table>
-
-                    </div>
-                    <div className={`pagination`}>
-                        <button>Anterior</button>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>Próximo</button>
-                    </div>
+                    <div className={`tabledatacontainer`}>
+                        <div className={`settings`}>
+                            <select className={``}>
+                                <option value={""}>Ações</option>
+                                <option value={""}>Ativar Selecionados</option>
+                                <option value={""}>Desativar Selecionados</option>
+                            </select>
+                            <button onClick={()=> newProduct()}>Novo</button>
+                        </div>
+                        <div className={`tablerow width_100`}>
+                            <table className={`table`} cellPadding={0} cellSpacing={0}>
+                                <tr>
+                                    <th><input type="checkbox"/></th>
+                                    <th><span>Produto</span></th>
+                                    <th><span>Marca</span></th>
+                                    <th><span>Estoque</span></th>
+                                    <th><span>Preço de Venda</span></th>
+                                    <th><span>Preço Promocional</span></th>
+                                    <th><span>Data Expiração Promoção</span></th>
+                                    <th><span>Preço de Custo</span></th>
+                                    <th><span>Quantidade Estoque</span></th>
+                                    <th><span>Produto Ativo</span></th>
+                                </tr>
+                                {dataProducts && dataProducts.map((dataProducts)=>{
+                                    return(
+                                        <tr key={dataProducts.id}>
+                                            <td><input type="checkbox"/></td>
+                                            <td><span>{dataProducts.name}</span></td>
+                                            <td><span>{dataProducts.brand}</span></td>
+                                            <td><span>{dataProducts.stock}</span></td>
+                                            <td><span>{dataProducts.sale_value}</span></td>
+                                            <td><span>{dataProducts.promotional_value}</span></td>
+                                            <td><span>{dataProducts.promotion_expiration_date}</span></td>
+                                            <td><span>{dataProducts.promotional_value}</span></td>
+                                            <td><span>{dataProducts.cost}</span></td>
+                                            <td>
+                                                <span className={`${dataProducts.product_unavailable ? `inactive_item` : `active_item`}`}>
+                                                    {dataProducts.product_unavailable ? `Ativo ` : `Inativo`}
+                                                </span>    
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
+                            </table>
+                        </div>
+                        <div className={`pagination`}>                       
+                            <BsArrowLeftCircle color=""/>                          
+                            <button className={`btn_pagination active_page`}>1</button>
+                            <button className={`btn_pagination`}>2</button>
+                            <button className={`btn_pagination`}>3</button>
+                            <BsArrowRightCircleFill/>
+                        </div>
+                    </div>         
                 </div>
             </section>
         </main>

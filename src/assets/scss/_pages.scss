@@ -8,6 +8,24 @@
         justify-content: flex-end;
         background-color: $gray-color-medium;
 
+        .infopage{
+            display: flex;
+            justify-content: space-between;
+
+            .titlearea{
+                cursor: default;
+                .title{
+                    font-weight: 700;
+                }
+
+                .counter{
+                    font-size: $detail-font-size;
+                }
+
+            }
+
+        }
+
         .dataarea{
             width: calc(100% - 200px);
             display: flex;
