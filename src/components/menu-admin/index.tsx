@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./MenuAdmin.module.scss";
+import {BsFillHouseFill, BsFillPeopleFill, BsFillInboxesFill, BsClipboardDataFill, BsCash, BsGraphUpArrow, BsGearFill, BsBoxArrowDownRight} from "react-icons/bs";
 
 interface SubMenu{
     item: string;
@@ -21,9 +22,11 @@ function MenuAdmin(){
         {
             item: "Inicio",
             url_item: "",
+            icon: <BsFillHouseFill/>
         },
         {
             item: "Clientes",
+            icon: <BsFillPeopleFill/>,
             submenu: [
                 {
                     item: "Cadastro de Clientes",
@@ -37,7 +40,12 @@ function MenuAdmin(){
         },
         {
             item: "Produto",
+            icon: <BsFillInboxesFill/>,
             submenu: [
+                {
+                    item: "Cadastro de Categoria",
+                    url_item: ""
+                },
                 {
                     item: "Cadastro de Produtos",
                     url_item: ""
@@ -50,6 +58,7 @@ function MenuAdmin(){
         },
         {
             item: "Vendas",
+            icon: <BsGraphUpArrow/>,
             submenu: [
                 {
                     item: "Lançamento de Vendas",
@@ -67,6 +76,7 @@ function MenuAdmin(){
         },
         {
             item: "Financeiro",
+            icon: <BsCash/>,
             submenu: [
                 {
                     item: "Contas a Pagar",
@@ -84,6 +94,7 @@ function MenuAdmin(){
         },
         {
             item: "Relatórios",
+            icon: <BsClipboardDataFill/>,
             submenu: [
                 {
                     item: "Fluxo de Caixa",
@@ -97,6 +108,7 @@ function MenuAdmin(){
         },
         {
             item: "Administrativo",
+            icon: <BsGearFill/>,
             submenu: [
                 {
                     item: "Perfil",
@@ -118,23 +130,26 @@ function MenuAdmin(){
         },
         {
             item: "Sair",
-            url_item: ""
+            url_item: "",
+            icon: <BsBoxArrowDownRight/>
         }
     ];
 
     return(
         <nav className={style.menuadmin}>
-            <div>
-                {/* Icon Hamburguer */}
+            <div className={style.menuadmin___logoArea}>
+                {/* Logo */}
             </div>
             <div className={style.menuadmin___itens}>
-                {menuItens && menuItens.map(menu=>{
+                <ul>
+                {menuItens && menuItens.map((menu, index)=>{
                     return(
-                        <>
-                            <a>{menu.item}</a>
-                        </>
+                        <li key={index} className={style.menuadmin___itens___menu}>                     
+                            <span className={style.menuadmin___itens___menu__item}>{menu.icon} {menu.item}</span>
+                        </li>
                     )
                 })}
+                </ul>
             </div>
 
         </nav>

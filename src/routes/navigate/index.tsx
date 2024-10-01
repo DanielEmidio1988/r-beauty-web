@@ -15,3 +15,11 @@ export const goToSignUpPage = (navigate: NavigateFunction) => {
 export const goToAdminPage = (navigate: NavigateFunction) => {
     navigate('/admin');
 };
+
+export const goToRegisterBrandPage = (navigate: NavigateFunction) => {
+    navigate('/admin/product/register-brand');
+};
+
+export const goToRegisterProductPage = (navigate: NavigateFunction) => {
+    navigate('/admin/product/register-product');
+};
