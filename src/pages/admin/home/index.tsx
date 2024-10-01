@@ -9,10 +9,10 @@ import style from "./HomeAdminPage.module.scss";
 function HomeAdminPage(){
     return(
         <>
-            <main className={`${style.homepageadmin}`}>
-                <section className={`${style.dashboardSection} width_100 inner_padding_sm`}>
+            <main className={`${style.homepageadmin} pageadmin`}>
+                <section className={`${style.dashboardSection} width_100 inner_padding_sm sectionarea_admin`}>
                     <MenuAdmin/>
-                    <div className={`${style.dashboardSection___dashboardArea}`}>
+                    <div className={`${style.dashboardSection___dashboardArea} dataarea`}>
                         <article className={`width_100`}>
                             <BalanceSummary/>
                         </article>

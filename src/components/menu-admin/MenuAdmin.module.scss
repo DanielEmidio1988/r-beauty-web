@@ -7,6 +7,11 @@
     position: fixed;
     top: 0;
     left: 0;
+    overflow: auto;
+
+    .menuadmin___logoArea{
+        padding: 20px 0;
+    }
 
     .menuadmin___itens{
         display: flex;
@@ -14,9 +19,24 @@
         gap: 12px;
         padding: 0 20px;
 
-        a{
-            color: $white-color;
-            cursor: pointer;
+        .menuadmin___itens___menu{
+            padding: 8px 0;
+
+            .menuadmin___itens___menu__item{
+                
+                color: $white-color;
+                cursor: pointer;
+                
+                &:hover{
+                    font-weight: 700;
+                }
+
+                svg{
+                    margin-right: 8px;
+                    height: 20px;
+                    width: 20px;
+                }
+            }
         }
     }
 }
