@@ -6,7 +6,7 @@ import style from "./RegisterBrandPage.module.scss";
 import brands from '../../../../assets/data/brand.json'; //Daniel: remover após conectar Back End
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
 
-function RegisterBrandPage() { //Alterar para register Brand
+function BrandsPage() { //Alterar para register Brand
     const titlePage: string = "Cadastro de Marcas";
     const [dataBrands, setDataBrands] = useState<IBrand[] | []>([]);
     const [totalRegister, setTotalRegister] = useState<String>("0 registro");
@@ -90,4 +90,4 @@ function RegisterBrandPage() { //Alterar para register Brand
     )
 }
 
-export default RegisterBrandPage
+export default BrandsPage

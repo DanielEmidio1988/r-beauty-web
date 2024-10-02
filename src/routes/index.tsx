@@ -6,6 +6,7 @@ import SignUpPage from "../pages/user/signup";
 import HomeAdminPage from "../pages/admin/home";
 import BrandsPage from "../pages/admin/product/brands";
 import ProductsPage from "../pages/admin/product/products";
+import RegisterProductPage from "../pages/admin/product/products/register-product";
 
 function Router(){
     return(
@@ -18,6 +19,7 @@ function Router(){
                 <Route path="/admin" element={<HomeAdminPage/>}/>
                 <Route path="/admin/product/brands" element={<BrandsPage/>}/>
                 <Route path="/admin/product/products" element={<ProductsPage/>}/>
+                <Route path="/admin/product/register-product" element={<RegisterProductPage/>}/>
             </Routes>
         </BrowserRouter>
     )

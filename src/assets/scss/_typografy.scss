@@ -44,14 +44,14 @@ h6{
     color: $dark-color;
 }
 
-p, 
-label{
+p{
     font-size: $font-size-base;
     font-weight: 300;
     color: $dark-color;
 }
 
-span{
+span, 
+label{
     font-size: $font-size-span;
     font-weight: 300;
     color: $dark-color;
