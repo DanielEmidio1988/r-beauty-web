@@ -23,3 +23,7 @@ export const goToBrandsPage = (navigate: NavigateFunction) => {
 export const goToProductsPage = (navigate: NavigateFunction) => {
     navigate('/admin/product/products');
 };
+
+export const goToRegisterProductPage = (navigate: NavigateFunction) => {
+    navigate('/admin/product/register-product')
+};

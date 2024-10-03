@@ -1,3 +1,5 @@
+import { IHistoryData } from "./IHistoryData";
+
 export interface IProduct{
     id?: string;
     id_user: string;
@@ -13,4 +15,5 @@ export interface IProduct{
     promotion_expiration_date: string;
     stock: number;
     product_unavailable: boolean;
+    history: IHistoryData[] | [];
 }

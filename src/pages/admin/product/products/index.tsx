@@ -4,6 +4,8 @@ import MenuAdmin from "../../../../components/menu-admin";
 import HeaderAdmin from "../../../../components/header/header-admin";
 import products from "../../../../assets/data/products.json";
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import { goToRegisterProductPage } from "../../../../routes/navigate";
 
 interface ILegend{
     name: string;
@@ -27,6 +29,7 @@ function ProductsPage(){
     const titlePage: string = "Cadastro de Produtos";
     const [dataProducts, setDataProducts] = useState<IProduct[] | []>([]);
     const [totalRegister, setTotalRegister] = useState<String>("0 registro");
+    const navigate = useNavigate();
 
     useEffect(()=>{
         getAllProducts();
@@ -39,8 +42,8 @@ function ProductsPage(){
         setTotalRegister(totalProducts);
     }
 
-    function newProduct(){
-        //cadastro de produto
+    function goToEditProduct(){
+
     }
 
     function filterProduct(){
@@ -66,7 +69,7 @@ function ProductsPage(){
                                 <option value={""}>Ativar Selecionados</option>
                                 <option value={""}>Desativar Selecionados</option>
                             </select>
-                            <button onClick={()=> newProduct()}>Novo</button>
+                            <button onClick={()=> goToRegisterProductPage(navigate)}>Novo</button>
                         </div>
                         <div className={`tablerow width_100`}>
                             <table className={`table`} cellPadding={0} cellSpacing={0}>
