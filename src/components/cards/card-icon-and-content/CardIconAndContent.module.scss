@@ -1,0 +1,25 @@
+@import "../../../assets/scss/styled.scss";
+
+.card_service{
+    width: calc(33.33% - 20px);
+    min-width: 300px;
+    box-shadow: 4px 4px 8px $gray-color-medium;
+    border-radius: 12px;
+
+    .card_service___icon{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 16px 0;
+
+        svg{
+            font-size: 32px;
+            fill: $primary-color;
+        }
+    }
+
+    .card_service___content{
+        text-align: center;
+        padding: 16px 24px;
+    }
+}

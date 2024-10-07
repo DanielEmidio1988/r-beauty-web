@@ -59,7 +59,7 @@ function ProductsPage(){
                     <div className={`infopage`}>
                         <div className={`titlearea`}>
                             <h6 className={`title`}>{titlePage}</h6>
-                            <span className={`counter`}>{totalRegister}</span>
+                            <span className={`detail_content counter`}>{totalRegister}</span>
                         </div>                      
                     </div>
                     <div className={`tabledatacontainer`}>
@@ -75,30 +75,30 @@ function ProductsPage(){
                             <table className={`table`} cellPadding={0} cellSpacing={0}>
                                 <tr>
                                     <th><input type="checkbox"/></th>
-                                    <th><span>Produto</span></th>
-                                    <th><span>Marca</span></th>
-                                    <th><span>Estoque</span></th>
-                                    <th><span>Preço de Venda</span></th>
-                                    <th><span>Preço Promocional</span></th>
-                                    <th><span>Data Expiração Promoção</span></th>
-                                    <th><span>Preço de Custo</span></th>
-                                    <th><span>Quantidade Estoque</span></th>
-                                    <th><span>Produto Ativo</span></th>
+                                    <th><span className={`detail_content`}>Produto</span></th>
+                                    <th><span className={`detail_content`}>Marca</span></th>
+                                    <th><span className={`detail_content`}>Estoque</span></th>
+                                    <th><span className={`detail_content`}>Preço de Venda</span></th>
+                                    <th><span className={`detail_content`}>Preço Promocional</span></th>
+                                    <th><span className={`detail_content`}>Data Expiração Promoção</span></th>
+                                    <th><span className={`detail_content`}>Preço de Custo</span></th>
+                                    <th><span className={`detail_content`}>Quantidade Estoque</span></th>
+                                    <th><span className={`detail_content`}>Produto Ativo</span></th>
                                 </tr>
                                 {dataProducts && dataProducts.map((dataProducts)=>{
                                     return(
                                         <tr key={dataProducts.id}>
                                             <td><input type="checkbox"/></td>
-                                            <td><span>{dataProducts.name}</span></td>
-                                            <td><span>{dataProducts.brand}</span></td>
-                                            <td><span>{dataProducts.stock}</span></td>
-                                            <td><span>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.sale_value)}</span></td>
-                                            <td><span>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.promotional_value)}</span></td>
-                                            <td><span>{dataProducts.promotion_expiration_date}</span></td>
-                                            <td><span>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.promotional_value)}</span></td>
-                                            <td><span>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.cost)}</span></td>
+                                            <td><span className={`detail_content`}>{dataProducts.name}</span></td>
+                                            <td><span className={`detail_content`}>{dataProducts.brand}</span></td>
+                                            <td><span className={`detail_content`}>{dataProducts.stock}</span></td>
+                                            <td><span className={`detail_content`}>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.sale_value)}</span></td>
+                                            <td><span className={`detail_content`}>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.promotional_value)}</span></td>
+                                            <td><span className={`detail_content`}>{dataProducts.promotion_expiration_date}</span></td>
+                                            <td><span className={`detail_content`}>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.promotional_value)}</span></td>
+                                            <td><span className={`detail_content`}>{new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(dataProducts.cost)}</span></td>
                                             <td>
-                                                <span className={`${!dataProducts.product_unavailable ? `inactive_item` : `active_item`}`}>
+                                                <span className={`detail_content ${!dataProducts.product_unavailable ? `inactive_item` : `active_item`}`}>
                                                     {!dataProducts.product_unavailable ? `Ativo ` : `Inativo`}
                                                 </span>    
                                             </td>
