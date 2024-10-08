@@ -1,0 +1,15 @@
+@import "../../../assets/scss/styled.scss";
+
+.salesPerformanceGraph{
+    background-color: $white-color;
+    box-shadow: 4px 4px 4px $gray-color-medium;
+    border-radius: 12px;
+    padding: 4vh 2vw;
+    cursor: pointer;
+
+    .salesPerformanceGraph___title{
+        font-weight: 700;
+        margin-bottom: 2vh;
+        text-transform: uppercase;
+    }
+}

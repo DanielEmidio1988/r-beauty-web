@@ -37,6 +37,7 @@ function SignUpPage(){
                                 <input 
                                     type="text"
                                     placeholder="Informe seu sobrenome" 
+                                    {...register("lastname")}
                                 />
                             </div>
                         </div>
@@ -46,6 +47,7 @@ function SignUpPage(){
                                 <input
                                     type="text"
                                     placeholder="Informe seu apelido" 
+                                    {...register("username")}
                                 />
                             </div>
                         </div>
@@ -73,6 +75,7 @@ function SignUpPage(){
                                     type="password"
                                     name="password"
                                     placeholder="Informe seu apelido" 
+                                    // {...register("password")}
                                 />
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 export interface IBrand{
-    id: string;
+    id?: string;
     id_user: string;
     name: string;
     profit: number;

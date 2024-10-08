@@ -21,7 +21,7 @@
 
         .menuadmin___itens___menu{
             padding: 8px 0;
-
+            
             .menuadmin___itens___menu__item{
                 
                 color: $white-color;
@@ -35,6 +35,30 @@
                     margin-right: 8px;
                     height: 20px;
                     width: 20px;
+                }
+    
+            }
+
+            .menuadmin___itens___menu__submenu{
+                display: none;
+            }
+
+            &.active{
+
+                .menuadmin___itens___menu__submenu{
+                    display: block;
+
+                    .menuadmin___itens___menu__submenu___item{
+                        font-size: $detail-font-size;
+                        color: $white-color;
+                        margin: 12px 0;
+                        cursor: pointer;
+
+                        &:hover{
+                            opacity: 0.6;
+                        }
+                        
+                    }
                 }
             }
         }

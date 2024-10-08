@@ -1,0 +1,59 @@
+@import "../../../assets/scss/styled.scss";
+
+.card_service{
+    width: calc(33.33% - 20px);
+    min-width: 300px;
+    box-shadow: 4px 4px 8px $gray-color-medium;
+    border-radius: 12px;
+
+    .card_service___icon{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 16px 0;
+
+        svg{
+            font-size: 32px;
+            fill: $primary-color;
+        }
+    }
+
+    .card_service___content{
+        text-align: center;
+        padding: 16px 24px;
+    }
+}
+
+@media(max-width: 700px){
+
+}
+
+@media(max-width: 500px){
+
+    .card_service{
+        width: 100%;
+        min-width: 100%;
+
+        .card_service___icon{
+            padding: 32px 0;
+
+            svg{
+                font-size: 44px;
+            }
+        }
+
+        .card_service___content{
+            padding: 32px 24px;
+
+            p{
+                font-size: $font-size-h6-responsive;
+            }
+
+            span{
+                font-size: $font-size-base-responsive;
+            }
+        }
+
+    }
+
+}
