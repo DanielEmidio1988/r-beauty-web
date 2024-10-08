@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { IProduct } from "../../../../../types/IProduct";
 import MenuAdmin from "../../../../../components/menu-admin";
 import HeaderAdmin from "../../../../../components/header/header-admin";
@@ -7,6 +8,7 @@ import RegisterProdAdmin from "../../../../../components/register-area/form-regi
 import HistoryTab from "../../../../../components/register-area/history-tab";
 import { useContextData } from "../../../../../context";
 import DetailsTab from "../../../../../components/register-area/details-tab";
+import { goToProductsPage } from "../../../../../routes/navigate";
 
 enum SECTION_REGISTER{
     registerdata = "Cadastro",
@@ -28,6 +30,7 @@ function RegisterProductPage() {
     const [sectionRegister, setSectionRegister] = useState<ISectionRegister>({type: SECTION_REGISTER.registerdata});
     const updateRegister: boolean = false; //provisório
     const {activeModal, setActiveModal} = useContextData();
+    const navigate = useNavigate();
 
     //Daniel: função para alternar entre 'seções' na área de formulário
     function switchSection(section: ISectionRegister){
@@ -43,7 +46,7 @@ function RegisterProductPage() {
                     <div className={`infopage`}>
                         <div className={`titlearea`}>
                             <h6 className={`title`}>{titlePage}</h6>
-                            <span>Voltar</span>
+                            <span style={{cursor: "pointer"}} onClick={()=>goToProductsPage(navigate)}>Voltar</span>
                         </div>
                     </div>
                     <div className={`formarea width_100`}>

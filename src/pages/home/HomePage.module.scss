@@ -1,9 +1,11 @@
 @import '../../assets/scss/variables';
 
 .homepage{
+    padding: 0 20px;
     
     .banner{
-        width: 100%;
+        width: calc(100% + 40px);
+        margin-left: -20px;
         height: 100vh;
         display: flex;
         background-color: $primary-color;
@@ -54,5 +56,62 @@
         .faq___content{
             max-width: 800px;
         }
+    }
+}
+
+@media (max-width: 765px){
+
+    .homepage{
+
+    }
+
+}
+
+@media (max-width: 765px){
+
+    .homepage{
+
+        .banner{
+            .banner___welcomeContent,
+            .banner___imgArea{
+                padding: 0 20px;
+            }
+        }
+        
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .homepage{
+
+        .banner{
+
+            .banner___welcomeContent{
+                padding: 32px 20px;
+
+                .banner___welcomeContent___btnArea{
+                    justify-content: center;
+
+                    button{
+                        font-size: $font-size-h4;
+                    }
+                }
+            }
+           
+            .banner___imgArea{
+                display: none;
+            }
+        }
+
+        .portfolio{
+            
+            .intro___wrapper{
+                justify-content: center;
+            }
+
+        }
+
     }
 }

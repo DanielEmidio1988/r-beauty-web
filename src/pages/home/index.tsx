@@ -4,6 +4,7 @@ import {BsBox2Fill, BsGraphUpArrow, BsTagFill, BsCreditCardFill, BsBarChartFill,
 import { goToLoginPage, goToSignUpPage } from '../../routes/navigate/index';
 import CardIconAndContent from "../../components/cards/card-icon-and-content";
 import FAQ from "../../components/faq";
+import Footer from "../../components/footer";
 import style from "./HomePage.module.scss";
 import homepageIMG from "../../assets/images/homepage/homepage-img.png"
 
@@ -144,8 +145,8 @@ function HomePage() {
                             })}
                     </div>
                 </section>
-                <section className={`${style.faq} section_area`}>
-                    <div className={`${style.faq___title} title_area inner_padding_md`}>
+                <section className={`${style.faq} section_area inner_padding_lg`}>
+                    <div className={`${style.faq___title} title_area inner_padding_sm`}>
                         <h3>Perguntas <span>Frequentes</span></h3>
                         <h6>Aqui estão algumas das principais dúvidas sobre nossa plataforma.</h6>
                     </div>
@@ -156,6 +157,7 @@ function HomePage() {
                     </div>
                 </section>
             </main>
+            <Footer/>
         </>
     )
 }

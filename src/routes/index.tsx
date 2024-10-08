@@ -4,8 +4,8 @@ import Page404 from "../pages/404";
 import LoginPage from "../pages/user/login";
 import SignUpPage from "../pages/user/signup";
 import HomeAdminPage from "../pages/admin/home";
-import BrandsPage from "../pages/admin/product/brands";
-import ProductsPage from "../pages/admin/product/products";
+import BrandsPage from "../pages/admin/product/brands/brand";
+import ProductsPage from "../pages/admin/product/products/product";
 import RegisterProductPage from "../pages/admin/product/products/register-product";
 
 function Router(){

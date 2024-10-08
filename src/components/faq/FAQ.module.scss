@@ -44,3 +44,15 @@
     }
 
 }
+
+@media(max-width: 500px){
+    .faq_area{
+
+        .faq_area___box{
+
+            .faq_area___box___question{
+                padding: 28px 24px;
+            }
+        }
+    }
+}

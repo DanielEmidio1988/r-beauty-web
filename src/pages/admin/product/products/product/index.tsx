@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { IProduct } from "../../../../types/IProduct";
-import MenuAdmin from "../../../../components/menu-admin";
-import HeaderAdmin from "../../../../components/header/header-admin";
-import products from "../../../../assets/data/products.json";
+import { IProduct } from "../../../../../types/IProduct";
+import MenuAdmin from "../../../../../components/menu-admin";
+import HeaderAdmin from "../../../../../components/header/header-admin";
+import products from "../../../../../assets/data/products.json";
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-import { goToRegisterProductPage } from "../../../../routes/navigate";
+import { goToRegisterProductPage } from "../../../../../routes/navigate";
 
 interface ILegend{
     name: string;
