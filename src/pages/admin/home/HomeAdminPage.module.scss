@@ -1,0 +1,16 @@
+@import "../../../assets/scss/styled.scss";
+
+.homepageadmin{
+    
+    .dashboardSection{
+
+        .dashboardSection___dashboardArea{
+
+        }
+
+        .dashboardSection___dashboardArea___doublecolumn{
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

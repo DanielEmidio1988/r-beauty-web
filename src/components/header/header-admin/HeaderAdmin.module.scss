@@ -1,0 +1,40 @@
+@import "../../../assets/scss/styled.scss";
+
+.headeradmin{
+    background-color: $white-color;
+    box-shadow: 4px 4px 4px $gray-color-medium;
+    padding: 12px 16px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+
+    .headeradmin___navarea{
+
+        .headeradmin___navarea___listMenu{
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+
+            .headeradmin___navarea___listMenu___item{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                svg{
+                    width: 20px;
+                    height: 20px;
+                }
+
+                .headeradmin___navarea___listMenu___item___userName{
+                    font-weight: 700;
+                }
+
+                .headeradmin___navarea___listMenu___item___emailUser{
+                    font-size: 0.7rem;
+                }
+            }
+
+        }
+
+    }
+
+}

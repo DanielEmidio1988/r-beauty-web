@@ -1,0 +1,81 @@
+@import "../../../assets/scss/styled.scss";
+
+.upcomingpayments{
+    height: 300px;
+    background-color: $white-color;
+    box-shadow: 4px 4px 4px $gray-color-medium;
+    border-radius: 12px;
+    padding: 4vh 2vw;
+    overflow: auto;
+
+    .upcomingpayments___title{
+        font-weight: 700;
+        margin-bottom: 2vh;
+        text-transform: uppercase;
+    }
+
+    .upcomingpayments___table{
+        width: 100%;
+        min-width: 500px;
+
+        // .upcomingpayments___table___tr:nth-child(2n + 1){
+        //     background-color: $gray-color-medium;
+        // }
+
+        .upcomingpayments___table___tr{
+             &.latepayment{
+                .upcomingpayments___table___data{
+                    .upcomingpayments___table___data___info{
+                        color: $alert-color;
+                        font-weight: 700;
+                    }
+
+                }
+            }
+        }
+
+        .upcomingpayments___table___title{
+            text-align: left;
+        }
+
+        .upcomingpayments___table___data{
+            width: 20%;
+            padding: 8px 4px;
+            border-bottom: 2px solid $gray-color-medium;
+            cursor: pointer;
+
+            &.nameclient{
+                width: 40%;
+                // border-bottom: 1px solid $gray-color-strong;
+            }
+
+            .upcomingpayments___table___data___progressbar{
+                width: 100%;
+                height: 16px;
+                border-radius: 50px;
+                // overflow: hidden;
+                background-color: $gray-color-medium;
+
+                .upcomingpayments___table___data___progressbar___inner{
+                    height: 100%;
+                    border-radius: 50px;
+                    background-color: $primary-color;
+                    position: relative;
+
+                    .upcomingpayments___table___data___progressbar___inner___number{
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: -32px;
+                        color: $gray-color-strong;
+                        border-radius: 50%;
+                        font-size: $detail-font-size;
+                        font-weight: 400;   
+                        border-radius: 50%;                
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,6 +1,16 @@
 //Author: Daniel Emidio
 //Github: https://github.com/DanielEmidio1988
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
 .container{
     width: 100%;
     max-width: 1200px;
@@ -16,4 +26,54 @@
 
 .inner_padding_sm{
     padding: $inner-padding-sm;
+}
+
+.width_10{
+    width: $width-10;
+}
+
+.width_20{
+    width: $width-20;
+}
+
+.width_30{
+    width: $width-30;
+}
+
+.width_40{
+    width: $width-40;
+}
+
+.width_50{
+    width: $width-50;
+}
+
+.width_60{
+    width: $width-60;
+}
+
+.width_70{
+    width: $width-70;
+}
+
+.width_80{
+    width: $width-80;
+}
+
+.width_90{
+    width: $width-90;
+}
+
+.width_100{
+    width: $width-100;
+}
+
+@media (max-width: 600px){
+    .width_40, .width_50, .width_60{
+        width: $width-100;
+    }
+}
+
+@media (max-width: 500px){
+
 }

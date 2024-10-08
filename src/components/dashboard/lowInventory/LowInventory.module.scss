@@ -1,0 +1,61 @@
+@import "../../../assets/scss/styled.scss";
+
+.lowInventory{
+    height: 300px;
+    background-color: $white-color;
+    box-shadow: 4px 4px 4px $gray-color-medium;
+    border-radius: 12px;
+    padding: 4vh 2vw;
+    overflow: auto;
+    cursor: pointer;
+
+    .lowInventory___title{
+        font-weight: 700;
+        margin-bottom: 2vh;
+        text-transform: uppercase;
+    }
+
+    .lowInventory___table{
+        width: 100%;
+
+        .lowInventory___table___tr:nth-child(2n){
+            background-color: $gray-color-medium;
+        }
+
+        .lowInventory___table___dataProduct{
+            padding: 4px 8px;
+            
+
+            .lowInventory___table___dataProduct___product{
+                font-weight: 500;             
+                color: $gray-color-strong;
+            }
+
+            .lowInventory___table___dataProduct___brand{
+                font-weight: 400;
+                font-size: $detail-font-size;
+                color: $gray-color-strong;
+            }
+        }
+
+        .lowInventory___table___qtdProduct{
+            text-align: center;
+            padding: 4px 6px; 
+
+            .lowInventory___table___qtdProduct___data,
+            .lowInventory___table___qtdProduct___data__alert{
+                font-weight: 500;
+                font-size: $font-size-base;
+                color: $gray-color-strong;   
+            }
+
+            .lowInventory___table___qtdProduct___data__alert{
+                color: $alert-color;
+            }
+
+
+        }
+    
+    }
+
+}

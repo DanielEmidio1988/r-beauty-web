@@ -1,0 +1,66 @@
+@import "../../assets/scss/styled.scss";
+
+.menuadmin{
+    height: 100vh;
+    width: 200px;
+    background-color: $dark-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+
+    .menuadmin___logoArea{
+        padding: 20px 0;
+    }
+
+    .menuadmin___itens{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 20px;
+
+        .menuadmin___itens___menu{
+            padding: 8px 0;
+            
+            .menuadmin___itens___menu__item{
+                
+                color: $white-color;
+                cursor: pointer;
+                
+                &:hover{
+                    font-weight: 700;
+                }
+
+                svg{
+                    margin-right: 8px;
+                    height: 20px;
+                    width: 20px;
+                }
+    
+            }
+
+            .menuadmin___itens___menu__submenu{
+                display: none;
+            }
+
+            &.active{
+
+                .menuadmin___itens___menu__submenu{
+                    display: block;
+
+                    .menuadmin___itens___menu__submenu___item{
+                        font-size: $detail-font-size;
+                        color: $white-color;
+                        margin: 12px 0;
+                        cursor: pointer;
+
+                        &:hover{
+                            opacity: 0.6;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}

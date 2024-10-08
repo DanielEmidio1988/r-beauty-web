@@ -1,0 +1,358 @@
+[
+    {
+        "id": "1",
+        "id_user": "1",
+        "name": "Refil Nativa Span Morango Ruby",
+        "brand": "Boticário",
+        "profit": 15,
+        "cost": 30.36,
+        "suggested_sale": 35.72,
+        "sale_value": 43.90,
+        "promotional_value": 37.50,
+        "active_promotion": true,
+        "promotion_name": "",
+        "promotion_expiration_date": "26/12/2024 23:59:59",
+        "stock": 4,
+        "product_unavailable": false,
+        "history": [
+            {
+                "id": "1",
+                "id_user": "1",
+                "id_item": "1",
+                "title": "Cadastro de item",
+                "description": "Refil Nativa Span Morango Ruby cadastrado no sistema.",
+                "date": "06/07/2024 15:21"
+            },
+            {
+                "id": "2",
+                "id_user": "1",
+                "id_item": "1",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 5 itens em estoque. Pedido de compra nº 1.",
+                "date": "06/07/2024 16:34"
+            },
+            {
+                "id": "3",
+                "id_user": "1",
+                "id_item": "1",
+                "title": "Venda de Produto",
+                "description": "Venda de 1 item(s) no valor de R$ 41,90. Pedido de venda nº 1",
+                "date": "09/07/2024 11:02"
+            },
+            {
+                "id": "4",
+                "id_user": "1",
+                "id_item": "1",
+                "title": "Produto em periodo promocional",
+                "description": "Produto entrou na campanha promocional Bazar Final de Ano, com vencimento até 26/12/2024",
+                "date": "15/12/2024 19:06"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "id_user": "1",
+        "name": "Refil Nativa Spa Ameixa Negra",
+        "brand": "Boticário",
+        "profit": 15,
+        "cost": 30.36,
+        "suggested_sale": 35.72,
+        "sale_value": 43.90,
+        "promotional_value": 37.50,
+        "active_promotion": true,
+        "promotion_name": "",
+        "promotion_expiration_date": "26/12/2024 23:59:59",
+        "stock": 7,
+        "product_unavailable": false,
+        "history": [
+            {
+                "id": "5",
+                "id_user": "1",
+                "id_item": "2",
+                "title": "Cadastro de item",
+                "description": "Refil Nativa Spa Ameixa Negra cadastrado no sistema.",
+                "date": "06/07/2024 15:28"
+            },
+            {
+                "id": "6",
+                "id_user": "1",
+                "id_item": "2",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 12 itens em estoque. Pedido de compra nº 2.",
+                "date": "06/07/2024 16:16"
+            },
+            {
+                "id": "7",
+                "id_user": "1",
+                "id_item": "2",
+                "title": "Atualização de Cadastro",
+                "description": "Dados do produto atualizados do sistema",
+                "date": "06/07/2024 16:16"
+            },
+            {
+                "id": "8",
+                "id_user": "1",
+                "id_item": "2",
+                "title": "Venda de Produto",
+                "description": "Venda de 2 item(s) no valor de R$ 41,90. Pedido de venda nº 2",
+                "date": "15/07/2024 09:44"
+            },
+            {
+                "id": "9",
+                "id_user": "1",
+                "id_item": "2",
+                "title": "Venda de Produto",
+                "description": "Venda de 2 item(s) no valor de R$ 41,90. Pedido de venda nº 6",
+                "date": "29/07/2024 08:15"
+            },
+            {
+                "id": "10",
+                "id_user": "1",
+                "id_item": "2",
+                "title": "Venda de Produto",
+                "description": "Venda de 1 item(s) no valor de R$ 41,90. Pedido de venda nº 32",
+                "date": "29/07/2024 08:15"
+            },
+            {
+                "id": "11",
+                "id_user": "1",
+                "id_item": "1",
+                "title": "Produto em periodo promocional",
+                "description": "Produto entrou na campanha promocional Bazar Final de Ano, com vencimento até 26/12/2024",
+                "date": "15/12/2024 19:06"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "id_user": "1",
+        "name": "Refil Nativa Spa Orquidea Negra",
+        "brand": "Boticário",
+        "profit": 15,
+        "cost": 30.36,
+        "suggested_sale": 35.72,
+        "sale_value": 43.90,
+        "promotional_value": 37.50,
+        "active_promotion": true,
+        "promotion_name": "",
+        "promotion_expiration_date": "26/12/2024 23:59:59",
+        "stock": 0,
+        "product_unavailable": true,
+        "history": [
+            {
+                "id": "12",
+                "id_user": "1",
+                "id_item": "3",
+                "title": "Cadastro de item",
+                "description": "Refil Nativa Spa Orquidea Negra cadastrado no sistema.",
+                "date": "06/07/2024 15:28"
+            },
+            {
+                "id": "13",
+                "id_user": "1",
+                "id_item": "3",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 1 itens em estoque. Pedido de compra nº 3.",
+                "date": "06/07/2024 16:16"
+            },
+            {
+                "id": "14",
+                "id_user": "1",
+                "id_item": "3",
+                "title": "Venda de Produto",
+                "description": "Venda de 1 item(s) no valor de R$ 41,90. Pedido de venda nº 48",
+                "date": "06/08/2024 16:16"
+            },
+            {
+                "id": "15",
+                "id_user": "1",
+                "id_item": "3",
+                "title": "Atualização de Cadastro",
+                "description": "Dados do produto atualizados do sistema",
+                "date": "18/09/2024 12:00"
+            },
+            {
+                "id": "15",
+                "id_user": "1",
+                "id_item": "3",
+                "title": "Produto em periodo promocional",
+                "description": "Produto entrou na campanha promocional Bazar Final de Ano, com vencimento até 26/12/2024",
+                "date": "15/12/2024 19:06"
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "id_user": "1",
+        "name": "Refil Tododia Acerola e Hibisco",
+        "brand": "Natura",
+        "profit": 15,
+        "cost": 20.27,
+        "suggested_sale": 28.96,
+        "sale_value": 34.50,
+        "promotional_value": 29.99,
+        "active_promotion": true,
+        "promotion_name": "",
+        "promotion_expiration_date": "26/12/2024 23:59:59",
+        "stock": 2,
+        "product_unavailable": false,
+        "history": [
+            {
+                "id": "16",
+                "id_user": "1",
+                "id_item": "4",
+                "title": "Cadastro de item",
+                "description": "Refil Tododia Acerola e Hibisco cadastrado no sistema.",
+                "date": "06/07/2024 15:28"
+            },
+            {
+                "id": "17",
+                "id_user": "1",
+                "id_item": "4",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 2 itens em estoque. Pedido de compra nº 4.",
+                "date": "06/07/2024 16:16"
+            },
+            {
+                "id": "18",
+                "id_user": "1",
+                "id_item": "4",
+                "title": "Produto em periodo promocional",
+                "description": "Produto entrou na campanha promocional Bazar Final de Ano, com vencimento até 26/12/2024",
+                "date": "15/12/2024 19:06"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "id_user": "1",
+        "name": "Body Splash Nectarina e Flor de Pessego",
+        "brand": "Avon",
+        "profit": 15,
+        "cost": 15.66,
+        "suggested_sale": 22.37,
+        "sale_value": 22.37,
+        "promotional_value": 0,
+        "active_promotion": false,
+        "promotion_name": "",
+        "promotion_expiration_date": "",
+        "stock": 9,
+        "product_unavailable": false,
+        "history": [
+            {
+                "id": "19",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Cadastro de item",
+                "description": "Body Splash Nectarina e Flor de Pessego cadastrado no sistema.",
+                "date": "06/07/2024 15:28"
+            },
+            {
+                "id": "20",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 15 itens em estoque. Pedido de compra nº 5.",
+                "date": "06/07/2024 16:16"
+            },
+            {
+                "id": "21",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Venda de Produto",
+                "description": "Venda de 5 item(s) no valor de R$ 23,70. Pedido de venda nº 50",
+                "date": "02/08/2024 16:16"
+            },
+            {
+                "id": "22",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Venda de Produto",
+                "description": "Venda de 4 item(s) no valor de R$ 23,70. Pedido de venda nº 63",
+                "date": "04/08/2024 16:16"
+            },
+            {
+                "id": "23",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 5 itens em estoque. Pedido de compra nº 105.",
+                "date": "06/07/2024 16:16"
+            }, 
+            {
+                "id": "24",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Venda de Produto",
+                "description": "Venda de 7 item(s) no valor de R$ 20,00. Pedido de venda nº 87",
+                "date": "13/08/2024 16:16"
+            },           
+            {
+                "id": "25",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Atualização de Cadastro",
+                "description": "Dados do produto atualizados do sistema",
+                "date": "18/09/2024 12:00"
+            }, 
+            {
+                "id": "26",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Venda de Produto",
+                "description": "Venda de 3 item(s) no valor de R$ 24,12. Pedido de venda nº 135",
+                "date": "13/10/2024 16:16"
+            },
+            {
+                "id": "27",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 8 itens em estoque. Pedido de compra nº 284.",
+                "date": "06/11/2024 16:16"
+            },          
+            {
+                "id": "28",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Produto em periodo promocional",
+                "description": "Produto entrou na campanha promocional Bazar Final de Ano, com vencimento até 26/12/2024",
+                "date": "15/12/2024 19:06"
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "id_user": "1",
+        "name": "Malbec Black",
+        "brand": "Boticário",
+        "profit": 15,
+        "cost": 137.91,
+        "suggested_sale": 162.25,
+        "sale_value": 189.90,
+        "promotional_value": 0,
+        "active_promotion": false,
+        "promotion_name": "",
+        "promotion_expiration_date": "",
+        "stock": 9,
+        "product_unavailable": false,
+        "history": [
+            {
+                "id": "19",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Cadastro de item",
+                "description": "Malbec Black cadastrado no sistema.",
+                "date": "06/12/2024 15:28"
+            },
+            {
+                "id": "20",
+                "id_user": "1",
+                "id_item": "5",
+                "title": "Lançamento de Estoque",
+                "description": "Entrada de 9 itens em estoque. Pedido de compra nº 530.",
+                "date": "06/12/2024 16:16"
+            }
+        ]
+    }
+]

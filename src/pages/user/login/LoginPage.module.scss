@@ -1,0 +1,21 @@
+@import "../../../assets/scss/styled.scss";
+
+.loginPage{
+    height: 100vh;
+    background-color: $primary-color;
+
+    .formArea{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .formArea___form{
+            width: 40%;
+            min-width: 500px;
+            padding: 20px 16px;
+            background-color: $white-color;
+            border-radius: 12px;
+        }
+    }
+}
