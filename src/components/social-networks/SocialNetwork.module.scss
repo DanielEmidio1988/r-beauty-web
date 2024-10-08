@@ -1,0 +1,50 @@
+@import "../../assets/scss/styled.scss";
+
+.socialnetwork{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .socialnetwork___item{
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        border: 2px solid $white-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg{
+            font-size: 16px;
+            fill: $white-color;
+        }
+
+        &:hover{
+            border-color: $primary-color;
+
+            svg{
+                fill: $primary-color;
+            }
+        }
+    }
+
+}
+
+@media (max-width: 765px){
+
+    .socialnetwork{
+        justify-content: center;
+        
+        .socialnetwork___item{
+            width: 48px;
+            height: 48px;
+
+            svg{
+                font-size: 24px;
+            }
+        }
+    }
+
+}

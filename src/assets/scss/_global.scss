@@ -67,3 +67,13 @@ ul{
 .width_100{
     width: $width-100;
 }
+
+@media (max-width: 600px){
+    .width_40, .width_50, .width_60{
+        width: $width-100;
+    }
+}
+
+@media (max-width: 500px){
+
+}

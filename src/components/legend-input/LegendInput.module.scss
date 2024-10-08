@@ -1,0 +1,37 @@
+@import "../../assets/scss/styled.scss";
+
+.legendinput{
+    position: relative;
+    margin: 0 0 6px 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: $white-color;
+    background-color: $gray-color-strong;
+    padding: 0px 4px;
+    border-radius: 50%;
+    cursor: pointer;
+
+    .legentinput___legendBox{
+        display: none;
+
+        &.display{
+            display: block;
+            position: absolute;
+            top: -20px;
+            right: -204px;
+            z-index: 1;
+            border: 1px solid $gray-color-medium;
+            border-radius: 8px;
+            background-color: $white-color;
+            box-shadow: 4px 4px 4px $gray-color-medium;
+            width: 200px;
+            padding: 6px;
+
+            .legentinput___legendBox___legend{
+                font-size: 0.8rem;
+                font-weight: 400;
+                color: $dark-color;
+            }
+        }
+    }
+}

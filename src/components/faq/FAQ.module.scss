@@ -1,0 +1,58 @@
+@import "../../assets/scss/styled.scss";
+
+.faq_area{
+    width: 100%;
+
+    .faq_area___box{
+        width: 100%;
+
+        .faq_area___box___question{
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid $gray-color-strong;
+            padding: 20px 0;
+            cursor: pointer;
+            position: relative;
+
+            svg{
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            :hover{
+
+                svg{
+                    fill: $primary-color;
+                }
+            }
+        }
+
+        .faq_area___box___response{
+            padding: 20px 32px;
+            display: none;
+            transition: all .3s;
+        }
+
+        &.active{
+            .faq_area___box___response{
+                display: block;
+            }
+        }
+
+    }
+
+}
+
+@media(max-width: 500px){
+    .faq_area{
+
+        .faq_area___box{
+
+            .faq_area___box___question{
+                padding: 28px 24px;
+            }
+        }
+    }
+}

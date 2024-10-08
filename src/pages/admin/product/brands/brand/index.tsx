@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { IBrand } from "../../../../types/IBrand";
-import MenuAdmin from "../../../../components/menu-admin";
-import HeaderAdmin from "../../../../components/header/header-admin";
-import style from "./RegisterBrandPage.module.scss";
-import brands from '../../../../assets/data/brand.json'; //Daniel: remover após conectar Back End
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
+import { IBrand } from "../../../../../types/IBrand";
+import MenuAdmin from "../../../../../components/menu-admin";
+import HeaderAdmin from "../../../../../components/header/header-admin";
+import style from "./RegisterBrandPage.module.scss";
+import brands from '../../../../../assets/data/brand.json'; //Daniel: remover após conectar Back End
 
-function RegisterBrandPage() { //Alterar para register Brand
+
+function BrandsPage() { //Alterar para register Brand
     const titlePage: string = "Cadastro de Marcas";
     const [dataBrands, setDataBrands] = useState<IBrand[] | []>([]);
     const [totalRegister, setTotalRegister] = useState<String>("0 registro");
@@ -50,7 +51,7 @@ function RegisterBrandPage() { //Alterar para register Brand
                                 <option value={""}>Ativar Selecionados</option>
                                 <option value={""}>Desativar Selecionados</option>
                             </select>
-                            <button onClick={()=> newBrand()}>Novo</button>
+                            {/* <button onClick={()=> newBrand()}>Novo</button> */}
                         </div>
                         <div className={`tablerow width_100`}>
                             <table className={`table`} cellPadding={0} cellSpacing={0}>
@@ -67,8 +68,8 @@ function RegisterBrandPage() { //Alterar para register Brand
                                             <td><span>{dataBrand.name}</span></td>
                                             <td><span>{dataBrand.profit} %</span></td>
                                             <td>
-                                                <span className={`${dataBrand.brand_unavailable ? `inactive_item` : `active_item`}`}>
-                                                    {dataBrand.brand_unavailable ? `Ativo ` : `Inativo`}
+                                                <span className={`${!dataBrand.brand_unavailable ? `inactive_item` : `active_item`}`}>
+                                                    {!dataBrand.brand_unavailable ? `Ativo ` : `Inativo`}
                                                 </span>    
                                             </td>
                                         </tr>
@@ -90,4 +91,4 @@ function RegisterBrandPage() { //Alterar para register Brand
     )
 }
 
-export default RegisterBrandPage
+export default BrandsPage
