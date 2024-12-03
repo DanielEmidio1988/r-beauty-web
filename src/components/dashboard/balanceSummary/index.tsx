@@ -1,8 +1,32 @@
-import React from "react";
-import style from "./BalanceSummary.module.scss"
+import React, {useState} from "react";
+import style from "./BalanceSummary.module.scss";
+import CardSummary from "./cardSummary";
+
+interface ISummary{
+    value: number,
+    description: string,
+    color: string,
+}
 
 //Daniel: componente para renderização do resumo de Saldo Financeiro
 function BalanceSummary(){
+    const [summarys, setSummarys] = useState<ISummary[]>([
+        {
+            value: 10000,
+            description: "Em vendas",
+            color: "#B5E61D"
+        },
+        {
+            value: 2800,
+            description: "A receber",
+            color: "#6496D1"
+        },
+        {
+            value: 15000,
+            description: "A pagar",
+            color: "#FA5D7C"
+        }
+    ])
 
     function getBalanceSummary(){
         //Função para buscar dados do balanço financeiro resumido
@@ -10,18 +34,14 @@ function BalanceSummary(){
 
     return(
         <aside className={`${style.balanceSummary} width_100`}>
-            <div className={style.balanceSummary___item}>
-                <h4 className={style.balanceSummary___item___value}>R$ 10.000</h4>
-                <p className={style.balanceSummary___item___description}>Em vendas</p>
-            </div>
-            <div className={style.balanceSummary___item}>
-                <h4 className={style.balanceSummary___item___value}>R$ 2.800</h4>
-                <p className={style.balanceSummary___item___description}>A Receber</p>
-            </div>
-            <div className={style.balanceSummary___item}>
-                <h4 className={style.balanceSummary___item___value}>R$ 15.000</h4>
-                <p className={style.balanceSummary___item___description}>A Pagar</p>
-            </div>
+            {summarys && summarys.map((summary, index)=>{
+                return(
+                    <CardSummary 
+                        key={index}
+                        summary={summary}
+                    />
+                )
+            })}
         </aside>
     )
 }
