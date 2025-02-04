@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { IProduct } from "../../../../../types/IProduct";
-import MenuAdmin from "../../../../../components/menu-admin";
+import MenuAdmin from "../../../../../components/menuadmin";
 import HeaderAdmin from "../../../../../components/header/header-admin";
 import products from "../../../../../assets/data/products.json";
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";

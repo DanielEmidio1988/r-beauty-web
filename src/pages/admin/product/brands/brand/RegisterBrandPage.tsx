@@ -1,36 +1,11 @@
-import React, { useState, useEffect } from "react";
-import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
-import { IBrand } from "../../../../../types/IBrand";
-import MenuAdmin from "../../../../../components/menu-admin";
-import HeaderAdmin from "../../../../../components/header/header-admin";
+import { useRegisterBrandPage } from "./useRegisterBrandPage";
 import style from "./RegisterBrandPage.module.scss";
-import brands from '../../../../../assets/data/brand.json'; //Daniel: remover após conectar Back End
+import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
+import MenuAdmin from "../../../../../components/menuadmin";
+import HeaderAdmin from "../../../../../components/header/header-admin";
 
-
-function BrandsPage() { //Alterar para register Brand
-    const titlePage: string = "Cadastro de Marcas";
-    const [dataBrands, setDataBrands] = useState<IBrand[] | []>([]);
-    const [totalRegister, setTotalRegister] = useState<String>("0 registro");
-
-    useEffect(()=>{       
-        getAllBrands();    
-    },[]);
-
-    //Daniel: provisório
-    function getAllBrands() {
-        const allBrands = brands;
-        const totalBrands = allBrands.length > 1 ? `${allBrands.length} registros` : `${allBrands.length} registro`;
-        setDataBrands(allBrands);
-        setTotalRegister(totalBrands);
-    }
-
-    function newBrand() {
-        //cadastro de marca
-    }
-
-    function filterBrand() {
-        //filtro de marca
-    }
+function RegisterBrandsPage() {
+    const logic = useRegisterBrandPage();
 
     return (
         <main className={`pageadmin`}>
@@ -40,8 +15,8 @@ function BrandsPage() { //Alterar para register Brand
                     <HeaderAdmin/>
                     <div className={`infopage`}>
                         <div className={`titlearea`}>
-                            <h6 className={`title`}>{titlePage}</h6>
-                            <span className={`counter`}>{totalRegister}</span>
+                            <h6 className={`title`}>{logic.titlePage}</h6>
+                            <span className={`counter`}>{logic.totalRegister}</span>
                         </div>                      
                     </div>
                     <div className={`tabledatacontainer`}>
@@ -61,7 +36,7 @@ function BrandsPage() { //Alterar para register Brand
                                     <th><span>Lucratividade</span></th>
                                     <th><span>Marca Ativa</span></th>
                                 </tr>
-                                {dataBrands && dataBrands.map((dataBrand)=>{
+                                {logic.dataBrands && logic.dataBrands.map((dataBrand)=>{
                                     return(
                                         <tr key={dataBrand.id}>
                                             <td><input type="checkbox"/></td>
@@ -91,4 +66,4 @@ function BrandsPage() { //Alterar para register Brand
     )
 }
 
-export default BrandsPage
+export default RegisterBrandsPage

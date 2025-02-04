@@ -1,9 +1,8 @@
-import { useState } from "react";
-import MenuAdmin from "../../../components/menu-admin";
-import BalanceSummary from "../../../components/dashboard/balanceSummary";
-import LowInventory from "../../../components/dashboard/lowInventory";
-import SalesPerformanceGraph from "../../../components/dashboard/salesPerformanceGraph";
-import UpComingPayments from "../../../components/dashboard/upcomingPayments";
+import MenuAdmin from "../../../components/menuadmin";
+import BalanceSummary from "../components/balanceSummary/BalanceSummary";
+import LowInventory from "../components/lowInventory/LowInventory";
+import SalesPerformance from "../components/salesperformance/SalesPerformance";
+import UpComingPayments from "../components/upcomingPayments/UpComingPayments";
 import style from "./HomeAdminPage.module.scss";
 
 function HomeAdminPage(){
@@ -25,7 +24,7 @@ function HomeAdminPage(){
                             </aside> 
                         </article>
                         <article className={`width_100`}>
-                            <SalesPerformanceGraph/>
+                            <SalesPerformance/>
                         </article>
                     </div>
                 </section>

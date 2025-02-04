@@ -1,12 +1,10 @@
 import React from "react";
 import style from "./LowInventory.module.scss";
+import { useLowInventory } from "./useLowInventory";
 
 //Daniel: componente para renderização de itens de inventário com estoque baixo
 function LowInventory(){
-
-    function updateInventory(){
-        //função para atualizar inventário
-    }
+    const logic = useLowInventory();
 
     return(
         <aside className={style.lowInventory}>

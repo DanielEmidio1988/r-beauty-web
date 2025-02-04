@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
 import {BsBox2Fill, BsGraphUpArrow, BsTagFill, BsCreditCardFill, BsBarChartFill, BsFillPeopleFill} from "react-icons/bs";
 import { goToLoginPage, goToSignUpPage } from '../../routes/navigate/index';
-import CardIconAndContent from "../../components/cards/card-icon-and-content";
+import CardIconAndContent from "../../components/cards/cardiconandcontent";
 import FAQ from "../../components/faq";
 import Footer from "../../components/footer";
 import style from "./HomePage.module.scss";

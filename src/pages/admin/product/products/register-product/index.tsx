@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { IProduct } from "../../../../../types/IProduct";
-import MenuAdmin from "../../../../../components/menu-admin";
+import MenuAdmin from "../../../../../components/menuadmin";
 import HeaderAdmin from "../../../../../components/header/header-admin";
 import RegisterProdAdmin from "../../../../../components/register-area/form-register-prod";
 import HistoryTab from "../../../../../components/register-area/history-tab";
-import { useContextData } from "../../../../../context";
+import { useBaseContextData } from "../../../../../context/BaseContext";
 import DetailsTab from "../../../../../components/register-area/details-tab";
 import { goToProductsPage } from "../../../../../routes/navigate";
 
@@ -29,7 +29,7 @@ function RegisterProductPage() {
     const { register, handleSubmit, formState: { errors } } = useForm<IProduct>(); 
     const [sectionRegister, setSectionRegister] = useState<ISectionRegister>({type: SECTION_REGISTER.registerdata});
     const updateRegister: boolean = false; //provisório
-    const {activeModal, setActiveModal} = useContextData();
+    const {activeModal, setActiveModal} = useBaseContextData();
     const navigate = useNavigate();
 
     //Daniel: função para alternar entre 'seções' na área de formulário
