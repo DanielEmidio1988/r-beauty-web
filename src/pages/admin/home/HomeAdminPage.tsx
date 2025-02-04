@@ -1,4 +1,4 @@
-import MenuAdmin from "../../../components/menuadmin";
+import MenuAdmin from "../../../components/menuadmin/MenuAdmin";
 import BalanceSummary from "../components/balanceSummary/BalanceSummary";
 import LowInventory from "../components/lowInventory/LowInventory";
 import SalesPerformance from "../components/salesperformance/SalesPerformance";

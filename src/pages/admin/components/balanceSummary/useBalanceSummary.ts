@@ -1,4 +1,4 @@
-import { hooks } from "@utils/hooks";
+import { hooks } from "../../../../utils/hooks";
 
 interface ISummary{
     value: number,

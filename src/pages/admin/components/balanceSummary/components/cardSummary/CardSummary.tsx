@@ -1,6 +1,6 @@
 import style from "./CardSummary.module.scss";
 import {BsCashCoin} from "react-icons/bs";
-import { rBeautyUtils } from "@utils/rBeautyUtils";
+import { rBeautyUtils } from "../../../../../../utils/rBeautyUtils";
 import { useCardSummary, CardSummaryProps } from "./useCardSummary";
 
 function CardSummary(props:CardSummaryProps){
