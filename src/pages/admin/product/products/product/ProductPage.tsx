@@ -1,6 +1,6 @@
 import { useProductPage } from "./useProductPage";
-import MenuAdmin from "../../../../../components/menuadmin/MenuAdmin";
-import HeaderAdmin from "../../../../../components/header/header-admin/HeaderAdmin";
+import MenuAdmin from "../../../../../layouts/adminlayout/components/menuadmin/MenuAdmin";
+import HeaderAdmin from "../../../../../layouts/adminlayout/components/header-admin/HeaderAdmin";
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
 import { goToRegisterProductPage } from "../../../../../routes/navigate";
 

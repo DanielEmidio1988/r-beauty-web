@@ -1,8 +1,8 @@
 import { useRegisterBrandPage } from "./useRegisterBrandPage";
 import style from "./RegisterBrandPage.module.scss";
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
-import MenuAdmin from "../../../../../components/menuadmin/MenuAdmin";
-import HeaderAdmin from "../../../../../components/header/header-admin/HeaderAdmin";
+import MenuAdmin from "../../../../../layouts/adminlayout/components/menuadmin/MenuAdmin";
+import HeaderAdmin from "../../../../../layouts/adminlayout/components/header-admin/HeaderAdmin";
 
 function RegisterBrandsPage() {
     const logic = useRegisterBrandPage();

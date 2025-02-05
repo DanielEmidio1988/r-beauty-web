@@ -1,3 +1,4 @@
+import React from 'react';
 import { goToLoginPage, goToSignUpPage } from '../../routes/navigate/index';
 import CardIconAndContent from "../../components/cards/cardiconandcontent/CardIconAndContent";
 import FAQ from "../../components/faq/FAQ";

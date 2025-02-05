@@ -1,5 +1,5 @@
-import MenuAdmin from "../../../../../components/menuadmin/MenuAdmin";
-import HeaderAdmin from "../../../../../components/header/header-admin/HeaderAdmin";
+import MenuAdmin from "../../../../../layouts/adminlayout/components/menuadmin/MenuAdmin";
+import HeaderAdmin from "../../../../../layouts/adminlayout/components/header-admin/HeaderAdmin";
 import RegisterProdAdmin from "../../../../../components/register-area/form-register-prod";
 import HistoryTab from "../../../../../components/register-area/history-tab";
 import DetailsTab from "../../../../../components/register-area/details-tab";
