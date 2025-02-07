@@ -1,13 +1,22 @@
 
-import { useAdminLayout, AdminLayoutProps} from "./useAdminLayout";
+import { useAdminLayout } from "./useAdminLayout";
 import style from "./AdminLayout.module.scss";
 import { Outlet } from "react-router-dom";
+import MenuAdmin from "./components/menuadmin/MenuAdmin";
 
-function AdminLayout(props: AdminLayoutProps){
-    const logic = useAdminLayout();
+function AdminLayout(){
+    const { context } = useAdminLayout();
 
     return(
-        <></>
+        <main className={style.adminlayout}>
+            <div>
+                <MenuAdmin/>
+            </div>
+            <div>
+                <Outlet/>
+            </div>
+
+        </main>
     )
 }
 

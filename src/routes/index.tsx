@@ -11,6 +11,7 @@ import ProductsPage from "../pages/admin/product/products/product/ProductPage";
 import RegisterProductPage from "../pages/admin/product/products/registerproduct/RegisterProductPage";
 import "../assets/scss/styled.scss"
 
+// Ajustar Routes
 function Router(){
     return(
         <ProviderData>

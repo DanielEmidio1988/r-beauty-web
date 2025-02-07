@@ -1,11 +1,17 @@
-import { useRegisterBrandPage } from "./useRegisterBrandPage";
 import style from "./RegisterBrandPage.module.scss";
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
 import MenuAdmin from "../../../../../layouts/adminlayout/components/menuadmin/MenuAdmin";
-import HeaderAdmin from "../../../../../layouts/adminlayout/components/header-admin/HeaderAdmin";
+import HeaderAdmin from "../../../../../layouts/adminlayout/components/headeradmin/HeaderAdmin";
+import { useRegisterBrandPageViewModel } from "./RegisterBrandPageViewModel";
 
 function RegisterBrandsPage() {
-    const logic = useRegisterBrandPage();
+    const {
+        context, 
+        titlePage, 
+        dataBrands, 
+        totalRegister,
+        getAllBrands,
+    } = useRegisterBrandPageViewModel()
 
     return (
         <main className={`pageadmin`}>
@@ -15,8 +21,8 @@ function RegisterBrandsPage() {
                     <HeaderAdmin/>
                     <div className={`infopage`}>
                         <div className={`titlearea`}>
-                            <h6 className={`title`}>{logic.titlePage}</h6>
-                            <span className={`counter`}>{logic.totalRegister}</span>
+                            <h6 className={`title`}>{titlePage}</h6>
+                            <span className={`counter`}>{totalRegister}</span>
                         </div>                      
                     </div>
                     <div className={`tabledatacontainer`}>
@@ -36,7 +42,7 @@ function RegisterBrandsPage() {
                                     <th><span>Lucratividade</span></th>
                                     <th><span>Marca Ativa</span></th>
                                 </tr>
-                                {logic.dataBrands && logic.dataBrands.map((dataBrand)=>{
+                                {dataBrands && dataBrands.map((dataBrand)=>{
                                     return(
                                         <tr key={dataBrand.id}>
                                             <td><input type="checkbox"/></td>

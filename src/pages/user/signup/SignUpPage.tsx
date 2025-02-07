@@ -1,9 +1,17 @@
 import { goToLoginPage, goToAdminPage } from "../../../routes/navigate";
 import style from "./SignUpPage.module.scss";
-import { useSignUpPage } from "./useSignUpPage";
+import { useSignUpPageViewModel } from "./SignUpPageViewModel";
 
 function SignUpPage(){
-    const logic = useSignUpPage();
+    const { 
+        context,
+        register, 
+        handleSubmit,
+        errors,
+        confirmPassword,
+        navigate,
+        onSubmit
+    } = useSignUpPageViewModel();
 
     return(
         <main className={`${style.signupPage} width_100`}>
@@ -12,23 +20,23 @@ function SignUpPage(){
                     <h3>Cadastro de Usuário</h3>
                 </div>
                 <div className={`${style.formSection__formArea} width_100`}>
-                    <form onSubmit={logic.handleSubmit(logic.onSubmit)} className={`${style.formSection__formArea___form} width_100`}>
+                    <form onSubmit={handleSubmit(onSubmit)} className={`${style.formSection__formArea___form} width_100`}>
                         <div>
                             <div>
                                 <label>Nome</label>
                                 <input
                                     type="text"
-                                    {...logic.register("name",{required: "Nome é obrigatório"})}
+                                    {...register("name",{required: "Nome é obrigatório"})}
                                     placeholder="Informe seu nome"
                                 />
-                                {logic.errors.name && <p>{logic.errors.name.message}</p>}
+                                {errors.name && <p>{errors.name.message}</p>}
                             </div>
                             <div>
                                 <label>Sobrenome</label>
                                 <input 
                                     type="text"
                                     placeholder="Informe seu sobrenome" 
-                                    {...logic.register("lastname")}
+                                    {...register("lastname")}
                                 />
                             </div>
                         </div>
@@ -38,7 +46,7 @@ function SignUpPage(){
                                 <input
                                     type="text"
                                     placeholder="Informe seu apelido" 
-                                    {...logic.register("username")}
+                                    {...register("username")}
                                 />
                             </div>
                         </div>
@@ -47,7 +55,7 @@ function SignUpPage(){
                                 <label>Email</label>
                                 <input
                                     type="email"
-                                    {...logic.register("email", {
+                                    {...register("email", {
                                         required: "Email é obrigatório",
                                         pattern: {
                                             value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -56,7 +64,7 @@ function SignUpPage(){
                                     })}
                                     placeholder="Informe seu e-mail" 
                                 />
-                                {logic.errors.email && <p>errors.email.message</p>}
+                                {errors.email && <p>errors.email.message</p>}
                             </div>
                         </div>
                         <div>
@@ -75,15 +83,15 @@ function SignUpPage(){
                                 <label>Confirme sua senha</label>
                                 <input
                                     type="text"
-                                    value={logic.confirmPassword}
+                                    value={confirmPassword}
                                     name="confirmPassword"
                                     placeholder="Informe seu apelido" 
                                 />
                             </div>
                         </div>
                         <div>
-                            <button onClick={()=> goToAdminPage(logic.navigate)}>Registrar</button>
-                            <button onClick={()=> goToLoginPage(logic.navigate)}>Voltar</button>
+                            <button onClick={()=> goToAdminPage(navigate)}>Registrar</button>
+                            <button onClick={()=> goToLoginPage(navigate)}>Voltar</button>
                         </div>
 
                     </form>                

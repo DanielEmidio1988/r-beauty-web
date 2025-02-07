@@ -4,8 +4,12 @@ import LowInventory from "../components/lowInventory/LowInventory";
 import SalesPerformance from "../components/salesperformance/SalesPerformance";
 import UpComingPayments from "../components/upcomingPayments/UpComingPayments";
 import style from "./HomeAdminPage.module.scss";
+import { HomeAdminPageProps } from "./HomeAdminPageTypes";
+import { useHomePageViewModel } from "./HomePageViewModel";
 
-function HomeAdminPage(){
+function HomeAdminPage(props: HomeAdminPageProps){
+    const { balanceSummary, lowInventory, upComingPayment, salesPerformance,} = useHomePageViewModel(props);
+
     return(
         <>
             <main className={`${style.homepageadmin} pageadmin`}>

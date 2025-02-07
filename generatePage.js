@@ -17,72 +17,100 @@ function generatePage(pageName, targetDir) {
     }
 
     const componentDir = path.join(__dirname, "src", targetDir, pageName);
-    
-    // Verifica se o diretório já existe
+
     if (fs.existsSync(componentDir)) {
         console.log('Erro: O componente/página já existe!');
         return;
     }
 
-    // Cria o diretório do componente
     fs.mkdirSync(componentDir.toLocaleLowerCase(), { recursive: true });
 
-    const componentTsx = generateTsx(pageName);
-    const componentScss = generateScss(pageName, targetDir); // Passando targetDir para a função
-    const hookTs = generateTs(pageName);
+    const componentView = generateView(pageName);
+    const componentTypes = generateTypes(pageName);
+    const componentModel = generateModel(pageName);
+    const componentViewModel = generateViewModel(pageName, targetDir); 
+    const componentScss = generateScss(pageName, targetDir);
 
-    createFile(path.join(componentDir, `${pageName}.tsx`), componentTsx);
+    createFile(path.join(componentDir, `${pageName}.tsx`), componentView);
+    createFile(path.join(componentDir, `${pageName}Types.tsx`), componentTypes);
+    createFile(path.join(componentDir, `${pageName}Model.ts`), componentModel);
+    createFile(path.join(componentDir, `${pageName}ViewModel.ts`), componentViewModel);
     createFile(path.join(componentDir, `${pageName}.module.scss`), componentScss);
-    createFile(path.join(componentDir, `use${pageName}.ts`), hookTs);
 
     console.log(`Componente ${pageName} criado com sucesso!`);
 }
 
-function generateTsx(pageName) {
+function generateView(pageName) {
     return `
 import { use${pageName}, ${pageName}Props} from "./use${pageName}";
 import style from "./${pageName}.module.scss";
+import { use${pageName}ViewModel } from "./use${pageName}ViewModel";
+import { ${pageName}Props } from "./${pageName}Types";
 
 function ${pageName}(props: ${pageName}Props){
     const logic = use${pageName}();
 
     return(
-        <></>
+        <div className={style.${pageName.toLocaleLowerCase()}}>
+            {/* your code here */}
+        </div>
     )
 }
 
 export default ${pageName}
 `;
+};
+
+function generateTypes(pageName){
+    return `
+export interface ${pageName}Props{}    
+    `
+}
+
+function generateViewModel(pageName, targetDir){
+    const srcDir = path.join(__dirname, 'src');
+    const componentDir = path.join(srcDir, targetDir, pageName);
+    let relativePath = path.relative(componentDir, path.join(srcDir, 'utils', 'hooks.ts'));
+
+    return `
+import { use${pageName}Model } from "./${pageName}Model";
+import { ${pageName}Props } from "./${pageName}Types";
+import { hooks } from "${relativePath}";
+
+export function use${pageName}ViewModel(props: ${pageName}Props){
+    // your code here
+    return{}
+}
+    `
+}
+
+function generateModel(pageName, targetDir){
+    const srcDir = path.join(__dirname, 'src');
+    const componentDir = path.join(srcDir, targetDir, pageName);
+    let relativePath = path.relative(componentDir, path.join(srcDir, 'utils', 'hooks.ts'));
+
+    return `
+import { hooks } from "${relativePath}";
+// import { } from "./${pageName}Types";
+
+export function use${pageName}Model(){
+    // your code here
+    return{}
+}
+    `
 }
 
 function generateScss(pageName, targetDir) {
-    // Calcular o caminho relativo de onde o arquivo SCSS deve ser importado
-    const srcDir = path.join(__dirname, 'src'); // Diretório base src
-    const componentDir = path.join(srcDir, targetDir, pageName); // Caminho do componente
-    let relativePath = path.relative(componentDir, path.join(srcDir, 'assets', 'scss', 'styled.scss')); // Calculando o caminho relativo de styled.scss
+    const srcDir = path.join(__dirname, 'src');
+    const componentDir = path.join(srcDir, targetDir, pageName);
+    let relativePath = path.relative(componentDir, path.join(srcDir, 'assets', 'scss', 'styled.scss'));
     
-    // Substitui as barras invertidas por barras normais
     relativePath = relativePath.replace(/\\/g, '/');
 
     return `
 @import "${relativePath}";
 
 .${pageName.toLocaleLowerCase()}{}
-`;
-}
-
-function generateTs(pageName) {
-    return `
-import { useBaseContextData } from "context/BaseContext";
-import { hooks } from "@utils/hooks";
-
-export interface ${pageName}Props{};
-
-export function use${pageName}(){
-    const context = useBaseContextData();
-
-    return {context};
-}
 `;
 }
 

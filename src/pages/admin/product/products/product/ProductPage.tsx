@@ -1,12 +1,18 @@
-import { useProductPage } from "./useProductPage";
 import MenuAdmin from "../../../../../layouts/adminlayout/components/menuadmin/MenuAdmin";
-import HeaderAdmin from "../../../../../layouts/adminlayout/components/header-admin/HeaderAdmin";
+import HeaderAdmin from "../../../../../layouts/adminlayout/components/headeradmin/HeaderAdmin";
 import {BsArrowLeftCircle, BsArrowLeftCircleFill, BsArrowRightCircle, BsArrowRightCircleFill} from "react-icons/bs";
 import { goToRegisterProductPage } from "../../../../../routes/navigate";
-
+import { useProductPageViewModel } from "./ProductPageViewModel";
 
 function ProductsPage(){
-    const logic = useProductPage();
+    const { 
+        titlePage,
+        dataProducts, 
+        totalRegister, 
+        navigate,
+        context,
+     } = useProductPageViewModel();
+
 
     return(
         <main className={`pageadmin`}>
@@ -16,8 +22,8 @@ function ProductsPage(){
                     <HeaderAdmin/>
                     <div className={`infopage`}>
                         <div className={`titlearea`}>
-                            <h6 className={`title`}>{logic.titlePage}</h6>
-                            <span className={`detail_content counter`}>{logic.totalRegister}</span>
+                            <h6 className={`title`}>{titlePage}</h6>
+                            <span className={`detail_content counter`}>{totalRegister}</span>
                         </div>                      
                     </div>
                     <div className={`tabledatacontainer`}>
@@ -27,7 +33,7 @@ function ProductsPage(){
                                 <option value={""}>Ativar Selecionados</option>
                                 <option value={""}>Desativar Selecionados</option>
                             </select>
-                            <button onClick={()=> goToRegisterProductPage(logic.navigate)}>Novo</button>
+                            <button onClick={()=> goToRegisterProductPage(navigate)}>Novo</button>
                         </div>
                         <div className={`tablerow width_100`}>
                             <table className={`table`} cellPadding={0} cellSpacing={0}>
@@ -43,7 +49,7 @@ function ProductsPage(){
                                     <th><span className={`detail_content`}>Quantidade Estoque</span></th>
                                     <th><span className={`detail_content`}>Produto Ativo</span></th>
                                 </tr>
-                                {logic.dataProducts && logic.dataProducts.map((dataProducts)=>{
+                                {dataProducts && dataProducts.map((dataProducts)=>{
                                     return(
                                         <tr key={dataProducts.id}>
                                             <td><input type="checkbox"/></td>

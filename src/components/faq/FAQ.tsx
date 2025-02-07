@@ -1,20 +1,20 @@
 import {BsFillPlusCircleFill} from "react-icons/bs"
 import style from "./FAQ.module.scss";
-import { useFAQ, FAQProps } from "./useFAQ";
-
+import { FAQProps } from "./FAQTypes";
+import { useFAQViewModel } from "./FAQViewModel";
 
 function FAQ(props: FAQProps){
-    const logic = useFAQ();
+    const { activeQuestion, setQuestionFAQ } = useFAQViewModel(props);
 
     return(
         <div className={`${style.faq_area}`}>
             {props.faqData && props.faqData.map((faq, index)=>{
-                const isActive = logic.activeQuestion === index;
+                const isActive = activeQuestion === index;
                 return(
                     <div 
                         className={`${style.faq_area___box} ${isActive && style.active}`}
                         key={index}
-                        onClick={()=> logic.setQuestionFAQ(index)}
+                        onClick={()=> setQuestionFAQ(index)}
                     >
                         <div className={`${style.faq_area___box___question}`}>
                             <h6>{faq.title} <BsFillPlusCircleFill/></h6>

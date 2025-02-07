@@ -1,8 +1,8 @@
 import { useBaseContextData } from "context/BaseContext";
 import { hooks } from "../../utils/hooks";
 import {BsBox2Fill, BsGraphUpArrow, BsTagFill, BsCreditCardFill, BsBarChartFill, BsFillPeopleFill} from "react-icons/bs";
-import { IFaq } from "@components/faq/interfaces/IFaq";
 import React from "react";
+import { IFaq } from "@components/faq/FAQTypes";
 
 export interface HomePageProps { };
 
