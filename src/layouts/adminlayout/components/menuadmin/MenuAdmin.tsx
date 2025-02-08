@@ -1,35 +1,40 @@
 import style from "./MenuAdmin.module.scss";
-import { useMenuAdmin } from "./useMenuAdmin";
+import { useMenuAdminViewModel } from "./MenuAdminViewModel";
 
 function MenuAdmin(){
-    const logic = useMenuAdmin();
+    const { activeMenu, menuItens, openMenu } = useMenuAdminViewModel();
 
     return(
         <nav className={style.menuadmin}>
             <div className={style.menuadmin___logoArea}>
                 {/* Logo */}
             </div>
-            <div className={style.menuadmin___itens}>
-                <ul>
-                {logic.menuItens && logic.menuItens.map((menu, index)=>{
-                    const isActive = logic.activeMenu === index;
+            <div className={style.menuadmin___navcontainer}>
+                <ul className={style.navmenu}>
+                {menuItens && menuItens.map((menu, index)=>{
+                    const isActive = activeMenu === index;
 
                     return(
                         <li 
                             key={index} 
-                            className={`${style.menuadmin___itens___menu} ${isActive && style.active}`}
-                            onClick={()=> logic.openSubmenu(menu, index)}
+                            className={`${style.navmenu__itens} ${isActive && style.active}`}
+                            onClick={()=> openMenu(menu, index)}
                         >                     
-                            <span className={style.menuadmin___itens___menu__item}>{menu.icon} {menu.item}</span>
-                            <ul className={style.menuadmin___itens___menu__submenu}>
+                            <span className={style.navmenu__itens__item}>
+                                {menu.icon} 
+                                <span className={style.content}>
+                                    {menu.label}
+                                </span>
+                            </span>
+                            <ul className={style.navmenu__itens__submenu}>
                             {menu.submenu && menu.submenu.map((sub, i)=>{
                                 return(
                                     <li 
-                                        className={style.menuadmin___itens___menu__submenu___item} 
+                                        className={style.navmenu__itens__submenu__item} 
                                         key={i}
-                                        onClick={()=>logic.openSubmenu(sub, i)}
+                                        onClick={()=>openMenu(sub, i)}
                                     >
-                                        {sub.item}
+                                        {sub.label}
                                     </li>
                                 )
                             })}

@@ -1,16 +1,29 @@
 @import "../../../assets/scss/styled.scss";
 
-.homepageadmin{
-    
-    .dashboardSection{
+.homeadmin{
+    width: 100%;
 
-        .dashboardSection___dashboardArea{
+    .dashboardArea{
+        width: 100%;
+        padding: 8px 12px;
+        display: flex;
+        gap: 20px;
+        min-height: 60vh;
 
+        .dashboardArea__chartarea{
+            width: calc(70% - 20px);
         }
 
-        .dashboardSection___dashboardArea___doublecolumn{
-            display: flex;
-            gap: 20px;
+        .dashboardArea__metricarea{
+            width: calc(30% - 20px)
+        }
+
+        .dashboardArea__lowinventory{
+            width: 45%;
+        }
+
+        .dashboardArea__upcomingpayments{
+            width: 55%;
         }
     }
 }

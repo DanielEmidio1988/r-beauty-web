@@ -1,4 +1,3 @@
-import MenuAdmin from "../../../layouts/adminlayout/components/menuadmin/MenuAdmin";
 import BalanceSummary from "../components/balanceSummary/BalanceSummary";
 import LowInventory from "../components/lowInventory/LowInventory";
 import SalesPerformance from "../components/salesperformance/SalesPerformance";
@@ -7,33 +6,28 @@ import style from "./HomeAdminPage.module.scss";
 import { HomeAdminPageProps } from "./HomeAdminPageTypes";
 import { useHomePageViewModel } from "./HomePageViewModel";
 
-function HomeAdminPage(props: HomeAdminPageProps){
-    const { balanceSummary, lowInventory, upComingPayment, salesPerformance,} = useHomePageViewModel(props);
+function HomeAdminPage(props: HomeAdminPageProps) {
+    const { balanceSummary, lowInventory, upComingPayment, salesPerformance, } = useHomePageViewModel(props);
 
-    return(
-        <>
-            <main className={`${style.homepageadmin} pageadmin`}>
-                <section className={`${style.dashboardSection} width_100 inner_padding_sm sectionarea_admin`}>
-                    <MenuAdmin/>
-                    <div className={`${style.dashboardSection___dashboardArea} dataarea`}>
-                        <article className={`width_100`}>
-                            <BalanceSummary/>
-                        </article>
-                        <article className={`${style.dashboardSection___dashboardArea___doublecolumn} width_100`}>
-                            <aside className={`width_40`}>
-                                <LowInventory/>
-                            </aside>
-                            <aside className={`width_60`}>
-                                <UpComingPayments/>
-                            </aside> 
-                        </article>
-                        <article className={`width_100`}>
-                            <SalesPerformance/>
-                        </article>
-                    </div>
-                </section>
-            </main>
-        </>
+    return (
+        <div className={style.homeadmin}>
+            <section className={`${style.dashboardArea} ${style.sectionone}`}>
+                <div className={style.dashboardArea__chartarea}>
+                    <SalesPerformance />
+                </div>
+                <div className={style.dashboardArea__metricarea}>
+                    <BalanceSummary />
+                </div>
+            </section>
+            <section className={style.dashboardArea}>
+                <div className={style.dashboardArea__lowinventory}>
+                    <LowInventory />
+                </div>
+                <div className={style.dashboardArea__upcomingpayments}>
+                    <UpComingPayments />
+                </div>
+            </section>
+        </div>
     )
 }
 

@@ -7,7 +7,9 @@ export function useSalesPerformance(){
         ["01/10", 1000, 400],
         ["02/10", 2000, 600],
         ["03/10", 600, 300],
-        ["04/10", 900, 400]
+        ["04/10", 2500, 900],
+        ["05/10", 3200, 1400],
+        ["06/10", 5900, 2400],
     ];
 
     const [options, setOptions] = hooks.useState<IOptionsChart>({

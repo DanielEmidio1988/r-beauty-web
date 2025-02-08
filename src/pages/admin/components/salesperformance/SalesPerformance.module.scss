@@ -1,11 +1,12 @@
 @import "../../../../assets/scss/styled.scss";
 
 .salesPerformanceGraph{
+    width: 100%;
+    height: 100%;
     background-color: $white-color;
     box-shadow: 4px 4px 4px $gray-color-medium;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 4vh 2vw;
-    cursor: pointer;
 
     .salesPerformanceGraph___title{
         font-weight: 700;

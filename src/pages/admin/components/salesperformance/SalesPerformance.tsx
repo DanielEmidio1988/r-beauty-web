@@ -14,7 +14,7 @@ function SalesPerformance(){
             <Chart 
                 chartType="Line"
                 width="100%"
-                height="400px"
+                height={300}
                 data={logic.data}
                 options={logic.options}
             />

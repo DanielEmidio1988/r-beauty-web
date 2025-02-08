@@ -1,20 +1,21 @@
 
-import { useAdminLayout } from "./useAdminLayout";
 import style from "./AdminLayout.module.scss";
 import { Outlet } from "react-router-dom";
 import MenuAdmin from "./components/menuadmin/MenuAdmin";
+import HeaderAdmin from "./components/headeradmin/HeaderAdmin";
 
 function AdminLayout(){
-    const { context } = useAdminLayout();
-
     return(
         <main className={style.adminlayout}>
-            <div>
+            <aside className={style.adminlayout___menuarea}>
                 <MenuAdmin/>
-            </div>
-            <div>
-                <Outlet/>
-            </div>
+            </aside>
+            <section className={style.adminlayout___contentarea}>
+                <HeaderAdmin/>
+                <section className={style.adminlayout___contentarea___content}>
+                    <Outlet/>
+                </section> 
+            </section>
 
         </main>
     )
