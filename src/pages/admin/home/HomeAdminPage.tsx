@@ -1,6 +1,7 @@
 import BalanceSummary from "../components/balanceSummary/BalanceSummary";
 import LowInventory from "../components/lowInventory/LowInventory";
 import SalesPerformance from "../components/salesperformance/SalesPerformance";
+import { ChartType } from "../components/salesperformance/SalesPerformanceTypes";
 import UpComingPayments from "../components/upcomingPayments/UpComingPayments";
 import style from "./HomeAdminPage.module.scss";
 import { HomeAdminPageProps } from "./HomeAdminPageTypes";
@@ -13,7 +14,10 @@ function HomeAdminPage(props: HomeAdminPageProps) {
         <div className={style.homeadmin}>
             <section className={`${style.dashboardArea} ${style.sectionone}`}>
                 <div className={style.dashboardArea__chartarea}>
-                    <SalesPerformance />
+                    <SalesPerformance 
+                        data={balanceSummary}
+                        chartType={ChartType.LINE}
+                    />
                 </div>
                 <div className={style.dashboardArea__metricarea}>
                     <BalanceSummary />

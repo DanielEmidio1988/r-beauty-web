@@ -30,7 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generate-page": "node generatePage.js"
+    "generate-item": "node generatePage.js"
   },
   "eslintConfig": {
     "extends": [
