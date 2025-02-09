@@ -1,0 +1,29 @@
+
+@import "../../assets/scss/styled.scss";
+@import "../../assets/scss/variables";
+
+.adminlayout{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-color: $gray-color-medium;
+    position: relative;
+
+    .adminlayout___menuarea{
+        width: 60px;
+        min-width: 60px;
+        height: 120vh;
+        position: relative;
+    }
+
+    .adminlayout___contentarea{
+        width: calc(100% - 60px);
+        height: 100%;
+
+        .adminlayout___contentarea___content{
+            padding: 20px 2vw;
+        }
+    }
+}
+
+

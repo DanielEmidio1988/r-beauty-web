@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { IProduct } from "../../../types/IProduct";
-import LegendInput from "../../legend-input";
+import LegendInput from "../../legendinput/LegendInput";
 
 interface Props{
     updateRegister: boolean
