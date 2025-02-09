@@ -1,0 +1,98 @@
+@import "../../../../assets/scss/styled.scss";
+
+.menuadmin {
+    min-height: 100vh;
+    padding-top: 10vh;
+    background-color: $dark-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+
+    .menuadmin___navcontainer {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 20px;
+
+        .navmenu {
+
+            .navmenu__itens {
+                padding: 8px 0;
+
+                .navmenu__itens__item {
+                    color: $white-color;
+                    cursor: pointer;
+
+                    &:hover {
+                        font-weight: 700;
+                    }
+
+                    svg {
+                        margin-right: 8px;
+                        height: 20px;
+                        width: 20px;
+                    }
+
+                    .content {
+                        display: none;
+                    }
+
+                }
+
+                .navmenu__itens__submenu {
+                    display: none;
+
+                    &.active {
+                        display: block;
+                    }
+
+                }
+
+                &:hover, &.active {
+
+                    .navmenu__itens__submenu {
+                        display: block;
+
+                        .navmenu__itens__submenu__item {
+                            font-size: $detail-font-size;
+                            color: $white-color;
+                            margin: 12px 0;
+                            cursor: pointer;
+
+                            &:hover {
+                                opacity: 0.6;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover{
+        width: 260px;
+        transition: .2s ease-in-out;
+        z-index: 1;
+
+        .menuadmin___navcontainer{
+
+            .navmenu{
+
+                .navmenu__itens {
+
+                    .navmenu__itens__item {
+                        display: flex;
+
+                        .content{
+                            display: block;
+                        }
+                    }
+
+                } 
+            }
+
+        }
+    }
+}
