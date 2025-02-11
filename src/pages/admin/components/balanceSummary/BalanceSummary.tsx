@@ -9,7 +9,7 @@ function BalanceSummary(props: BalanceSummaryProps){
 
     return(
         <aside className={`${style.balanceSummary} width_100`}>
-            {summarys && summarys.map((summary, index)=>{
+            {props.summarys && props.summarys.map((summary, index)=>{
                 return(
                     <CardSummary 
                         key={index}
