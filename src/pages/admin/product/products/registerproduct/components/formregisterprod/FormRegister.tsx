@@ -1,55 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { IProduct } from "../../../types/IProduct";
-import LegendInput from "../../legendinput/LegendInput";
+import IconLegend from "../../../../../../../components/iconlegend/IconLegend";
+import { useFormRegisterModelViewModel } from "./FormRegisterViewModel";
+import { FormRegisterProps } from "./FormRegisterTypes";
 
-interface Props{
-    updateRegister: boolean
-}
-
-interface ILegend {
-    name: string;
-    legend: string;
-};
-
-
-
-function RegisterProdAdmin({updateRegister}: Props) {
-    const { register, handleSubmit, formState: { errors } } = useForm<IProduct>();
-    const legendItens: ILegend[] = [
-        {
-            name: "cost",
-            legend: "Valor do produto no momento que ele foi adquirido na ultima compra"
-        },
-        {
-            name: "suggested_sale",
-            legend: "Valor de venda sugerido com base na margem de lucro da marca"
-        },
-        {
-            name: "sale_value",
-            legend: "Valor padrão de venda do produto"
-        },
-        {
-            name: "promotion_name",
-            legend: "Nome da campanha que está atribuido o periodo promocional"
-        },
-        {
-            name: "promotional_value",
-            legend: "Valor que será aplicado na venda no momento da venda, caso a promoção esteja ativa"
-        }
-    ];
-
-    function postRegister(){
-
-    }
-
-    function putRegister(){
-        
-    }
-
-    const onSubmit: SubmitHandler<IProduct> = (data) =>{
-        console.log(data)
-    }
+export function FormRegister(props: FormRegisterProps) {
+    const {
+        legends,
+        register,
+        handleSubmit,
+        errors,
+        onSubmit,
+    } = useFormRegisterModelViewModel();
 
     return (
         <form className={`form`} onSubmit={handleSubmit(onSubmit)}>
@@ -87,8 +47,9 @@ function RegisterProdAdmin({updateRegister}: Props) {
                 <div className={`input-area`}>
                     <label htmlFor="cost">
                         Preço de Custo 
-                        <LegendInput
-                            legend={legendItens.find(legend => legend.name === "cost")}
+                        <IconLegend
+                            legend={legends.cost}
+                            about="Entenda melhor"
                         />
                     </label>
                     <input 
@@ -101,8 +62,9 @@ function RegisterProdAdmin({updateRegister}: Props) {
                 <div className={`input-area`}>
                     <label htmlFor="suggested_sale">
                         Preço Sugerido
-                        <LegendInput
-                            legend={legendItens.find(legend => legend.name === "suggested_sale")}
+                        <IconLegend
+                            legend={legends.suggested_sale}
+                            about="Entenda melhor"
                         />
                     </label> 
                     <input 
@@ -116,8 +78,9 @@ function RegisterProdAdmin({updateRegister}: Props) {
                 <div className={`input-area`}>
                     <label htmlFor="sale_value">
                         Preço de Venda
-                        <LegendInput
-                            legend={legendItens.find(legend => legend.name === "sale_value")}
+                        <IconLegend
+                            legend={legends.sale_value}
+                            about="Entenda melhor"
                         />
                     </label>
                     <input 
@@ -132,8 +95,9 @@ function RegisterProdAdmin({updateRegister}: Props) {
                 <div className={`input-area`}>
                     <label htmlFor="active_promotion">
                         Promoção Ativa
-                        <LegendInput
-                            legend={legendItens.find(legend => legend.name === "promotion_name")}
+                        <IconLegend
+                            legend={legends.promotion_name}
+                            about="Entenda melhor"
                         />
                     </label>
                     <div className={`checked-area`}>
@@ -153,8 +117,9 @@ function RegisterProdAdmin({updateRegister}: Props) {
                 <div className={`input-area`}>
                     <label htmlFor="promotional_value">
                         Preço Promocional
-                        <LegendInput
-                            legend={legendItens.find(legend => legend.name === "promotional_value")}
+                        <IconLegend
+                            legend={legends.promotional_value}
+                            about="Entenda melhor"
                         />
                     </label>
                     <input
@@ -198,16 +163,14 @@ function RegisterProdAdmin({updateRegister}: Props) {
             </div>
             <div className={`single-column`}>
                 {
-                    updateRegister ?
+                    props.updateRegister ?
                     <input type="submit" className={``} value={`Atualizar cadastro`}/>
                     :
                     <input type="submit" className={``} value={`Cadastrar`}/>
                 }
-                { !updateRegister && <input type="submit" value={`Cadastrar e criar novo`}/> }
+                { !props.updateRegister && <input type="submit" value={`Cadastrar e criar novo`}/> }
                 <button className={`btnReverse-primary`} type="button">Cancelar</button>
             </div>
         </form>
     )
 }
-
-export default RegisterProdAdmin;

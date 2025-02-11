@@ -12,7 +12,7 @@ function IconLegend(props: IconLegendProps){
         <span className={style.iconlegend}>
             <BsExclamationCircle color="#6496D1"/>
             <aside className={style.iconlegend__legend}>
-                <span className={style.iconlegend__legend__title}>Sobre este indicador</span><br/>
+                <span className={style.iconlegend__legend__title}>{props.about}</span><br/>
                 <span className={style.iconlegend__legend__text}>
                     {props.legend}
                 </span>

@@ -14,6 +14,7 @@ function ChartData(props: ChartDataProps){
                 {props.titleChart}
                 <IconLegend 
                     legend={props.legend}
+                    about="Sobre este indicador"
                 />
             </p>
             <Chart 

@@ -4,7 +4,7 @@ import { IProduct } from "../../../../../types/IProduct";
 import { ISectionRegister, SECTION_REGISTER } from "./RegisterProductPageTypes";
 
 export function useRegisterProductPageModel() {
-    const { register, handleSubmit, formState: { errors } } = hooks.useForm<IProduct>();
+    const {register, handleSubmit, formState: { errors }} = hooks.useForm<IProduct>();
     const [sectionRegister, setSectionRegister] = hooks.useState<ISectionRegister>({ type: SECTION_REGISTER.registerdata }); 
     const [ activeModal, setActiveModal ]  = hooks.useState<boolean>(false);
     const context = useBaseContextData();
