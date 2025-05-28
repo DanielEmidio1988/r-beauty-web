@@ -7,17 +7,23 @@
 ![Axios](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white)
 
 ## 📖 Introdução
-**R-Beauty** é uma aplicação web full stack projetada para facilitar o trabalho de revendedores de produtos de beleza como Boticário, Natura, Avon, entre outros. Nossa plataforma oferece ferramentas essenciais para o gerenciamento completo do seu negócio, permitindo uma gestão eficiente de vendas, controle de estoque e análise financeira.
+O **r-Beauty** nasceu de uma necessidade real, dentro da minha própria casa.
+
+Minha esposa trabalha como consultora de beleza, representando marcas como Natura, Boticário, Eudora e tantas outras. Como muitos revendedores, ela gerenciava seus pedidos, clientes, estoques e pagamentos de forma manual — usando cadernos, planilhas e, às vezes, apenas a memória.
+
+Esse processo, além de trabalhoso, estava suscetível a erros e demandava muito tempo. Foi aí que surgiu a ideia: criar uma plataforma simples, intuitiva e eficiente para ajudar não só ela, mas também milhares de consultores(as) de beleza que vivem o mesmo desafio.
+
+O r-Beauty tem como missão *otimizar o tempo e profissionalizar a gestão de consultorias de beleza*, trazendo mais controle, organização e liberdade para quem empreende nesse segmento.
 
 ## 🔗 Link de Acesso
-- Em breve
+- [Clique aqui!](https://r-beauty-web.vercel.app/)
 
 ## 👥 Equipe
 | [<img src="https://avatars.githubusercontent.com/u/111311678?v=4" width=115><br><sub>Daniel Emidio</sub>](https://github.com/DanielEmidio1988) |
 | :---: |
 
-## 🧭 Status do Projeto
-- ⏳Em andamento
+## 🚀 Status do Projeto
+- 🔧 Em desenvolvimento ativo
 
 ## 📢 Últimas Atualizações
 * **Versão:** 2.0
@@ -27,68 +33,58 @@ O **r-Beauty** está em constante atualização para oferecer uma melhor experi�
 1. Migração de sistema do Google App Script/Google Sheets para React.Js, permitindo uma interface mais moderna, dinâmica e eficiente;  
 
 ## 📜 Escopo do Projeto
-Descrição em breve
 
 ### Arquitetura de pastas
-- `📂 src ` - Pasta contendo os arquivos principais do projeto
-  - `📂 assets` - Pasta com itens essenciais, de uso global como imagens, estilização, dados mockados, etc
-  - `📂 components` - Pasta de componentes do projeto
-  - `📂 context` - Pasta de context API do projeto
-  - `📂 pages` - Pasta com todas as páginas do projeto
-  - `📂 routes` - Pasta com todas as rotas do projeto
-  - `📂 utils` - Pasta com todas as funções e utilitários globais
-  - `📂 types` - Pasta com todas as tipagens globais
-- `📂 tests ` - Pasta contendo a estrutura de testes unitários
+- `📂 src `
+  - `📂 assets` - Imagens, estilos globais, dados mockados
+  - `📂 components` - Componentes reutilizáveis
+  - `📂 context` - Gerenciamento de estados globais (Context API)
+  - `📂 pages` - Páginas da aplicação
+  - `📂 routes` - Definição de rotas
+  - `📂 utils` - Funções utilitárias
+  - `📂 types` - Tipagens TypeScript globais
 
 ### Tecnologias e Recursos
-Abaixo, listo todas as tecnologias e bibliotecas utilizadas:
+| Front-End       | Bibliotecas       |
+| --------------- | ----------------- |
+| React.js        | React Router Dom  |
+| TypeScript      | Axios             |
+| SCSS (Sass)     | React Hook Form   |
+| Leaflet (mapas) | React Icons       |
+|                 | UUID              |
+|                 | Google Charts     |
+|                 | Date Range Picker |
 
-* **React.js:** para criação de interfaces mais intuitiva e eficiente, com a utilização de componentes reutilizáveis, facilitando a manutenção e escalabilidade do projeto.
-* **Typescript:** para ajudar a prevenir erros comuns em Javascript, como erros de tipo e nulos, tornando o código mais confiável, auxiliando a identificação de erros em tempo de desenvolvimento.
-* **SCSS:** para permitir organizar os estilos CSS de forma mais lógica e hierárquica.
-* **Leaflet:** para criação de mapas interativos personalizados, ampla documentação e comunidade ativa, facilitando a resolução de problemas.
-* **React Router Dom:** para criação de multiplas rotas e páginas, pensando em escalabilidade e crescimento do projeto.
-* **Axios:** biblioteca JavaScript que facilita as requisições HTTP a partir do navegador ou servidor utilizando NodeJs. Amplamente utilizada para requisição de API de terceiros.
-* **Google Charts:** biblioteca de gráficos do Google para o React, que fornece uma interface para o Google Chart, que será responsável para construção de gráficos de dados poderosa.
-* **Date Range Picker:** biblioteca que permite o gerenciamento de datas.
-* **UUID:** biblioteca para o controle de id de cadastros.
-* **React Hook Form:** para o gerenciamento de formulários.
-* **React Icons:** biblioteca de icones para tornar a navegação mais intuitiva.
 
 ## 🎨 Layout
-
-### Layout Mobile
-
-Em breve
-
-### Layout Desktop
-
-Em breve
+📱 *Mobile*: em desenvolvimento
+🖥️ *Desktop*: em desenvolvimento
 
 ## ⚙ Instalação
 
-Antes de iniciar, certifique-se de ter o [Node](https://nodejs.org/pt/download/prebuilt-installer) instalado em sua máquina, caso deseje executar esta aplicação localmente. Esta aplicação foi desenvolvida com o Node v18.
+### Pré-requisitos
+* [Node.js](https://nodejs.org/pt/download/prebuilt-installer) (v18 ou acima)
 
-### Baixando a branch localmente
-
-Abra o terminal Git na sua máquina, dentro da pasta onde deseja baixar o projeto, e execute o comando:
-
+### Clone o repositório
 ```
 git clone https://github.com/DanielEmidio1988/r-beauty-web.git
+cd r-beauty-web
 ```
 
-### Instalação pacotes NPM
-Durante o desenvolvimento do tema,foram utilizados alguns pacotes NPM que precisam ser instalados antes da execução do projeto. Para instalar, utilize o comando:
-
+### Instale as dependências
 ```
 npm install
 ```
 
-### Execução do projeto
-Após a instalação dos pacotes NPM, execute o comando abaixo para abrir o projeto localmente na localhost 3030:
+### Execute o projeto
 ```
 npm start
 ```
 
-## 💻 Utilizando o Projeto
-Descrição em breve
+## 💻 Como Usar
+🚧 Documentação de uso em construção.
+
+## 🤝 Contribuições
+Este projeto é pessoal e, no momento, não está aberto para contribuições externas. Porém, feedbacks e sugestões são sempre bem-vindos!
+
+📝 Licença Este projeto está sob licença MIT.
