@@ -1,26 +1,31 @@
 import BalanceSummary from "../components/balanceSummary/BalanceSummary";
 import LowInventory from "../components/lowInventory/LowInventory";
-import SalesPerformance from "../components/salesperformance/SalesPerformance";
-import { ChartType } from "../components/salesperformance/SalesPerformanceTypes";
+import { ChartType } from "../../../components/chartdata/ChartDataTypes";
 import UpComingPayments from "../components/upcomingPayments/UpComingPayments";
 import style from "./HomeAdminPage.module.scss";
 import { HomeAdminPageProps } from "./HomeAdminPageTypes";
 import { useHomePageViewModel } from "./HomePageViewModel";
+import ChartData from "../../../components/chartdata/ChartData";
 
 function HomeAdminPage(props: HomeAdminPageProps) {
-    const { balanceSummary, lowInventory, upComingPayment, salesPerformance, } = useHomePageViewModel(props);
+    const { balanceSummary, lowInventory, upComingPayment, salesPerformance, legendBalanceSum, optionsBalanceSum} = useHomePageViewModel(props);
 
     return (
         <div className={style.homeadmin}>
             <section className={`${style.dashboardArea} ${style.sectionone}`}>
                 <div className={style.dashboardArea__chartarea}>
-                    <SalesPerformance 
-                        data={balanceSummary}
+                    <ChartData 
+                        data={salesPerformance}
+                        titleChart="Relação de Vendas Ultimos 30 dias"
                         chartType={ChartType.LINE}
+                        legend={legendBalanceSum}
+                        options={optionsBalanceSum}
                     />
                 </div>
                 <div className={style.dashboardArea__metricarea}>
-                    <BalanceSummary />
+                    <BalanceSummary 
+                        summarys={balanceSummary}
+                    />
                 </div>
             </section>
             <section className={style.dashboardArea}>

@@ -5,4 +5,40 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+
+    .balanceSummary__card{
+        width: 100%;
+        height: 140px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 2vw;
+        border-radius: 12px;
+        background-color: $white-color;
+        box-shadow: 4px 4px 4px $gray-color-medium;
+        position: relative;
+        cursor: pointer;
+    
+        .balanceSummary__card__value{
+            font-weight: 700;
+        }
+    
+        .balanceSummary__card__description{
+            text-transform: uppercase;
+            color: $gray-color-strong;
+            font-weight: 500;
+        }
+    
+        .balanceSummary__card__status{
+            font-size: $font-size-span;
+        }
+    
+        svg{
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+    }
 }

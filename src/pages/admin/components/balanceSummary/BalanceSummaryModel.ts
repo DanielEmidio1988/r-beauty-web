@@ -1,14 +1,11 @@
+import { useBaseContextData } from "context/BaseContext";
 import { hooks } from "../../../../utils/hooks";
 import { ISummary } from "./BalanceSummaryTypes";
 
 export function useBalanceSummaryModel() {
-    const [summarys, setSummarys] = hooks.useState<ISummary[]>([]);
-    const [loading, setLoading] = hooks.useState<boolean>(false);
-
+    const context = useBaseContextData();
+    
     return {
-        summarys, 
-        setSummarys,
-        loading, 
-        setLoading,
+        context
     }
 }
