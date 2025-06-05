@@ -1,6 +1,7 @@
-@import "../../../../assets/scss/styled.scss";
 
-.salesPerformanceGraph{
+@import "../../assets/scss/styled.scss";
+
+.chartdata{
     width: 100%;
     height: 100%;
     background-color: $white-color;
@@ -8,7 +9,7 @@
     border-radius: 8px;
     padding: 4vh 2vw;
 
-    .salesPerformanceGraph___title{
+    .chartdata___title{
         font-weight: 700;
         margin-bottom: 2vh;
         text-transform: uppercase;

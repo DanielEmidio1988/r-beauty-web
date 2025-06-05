@@ -1,6 +1,4 @@
-import MenuAdmin from "../../../../../layouts/adminlayout/components/menuadmin/MenuAdmin";
-import HeaderAdmin from "../../../../../layouts/adminlayout/components/headeradmin/HeaderAdmin";
-import RegisterProdAdmin from "../../../../../components/register-area/form-register-prod";
+import { FormRegister } from "./components/formregisterprod/FormRegister";
 import HistoryTab from "../../../../../components/register-area/history-tab";
 import DetailsTab from "../../../../../components/register-area/details-tab";
 import { goToProductsPage } from "../../../../../routes/navigate";
@@ -53,7 +51,7 @@ function RegisterProductPage() {
                         Detalhes
                     </button>
                 </div>
-                {sectionRegister.type === SECTION_REGISTER.registerdata && <RegisterProdAdmin updateRegister={updateRegister} />}
+                {sectionRegister.type === SECTION_REGISTER.registerdata && <FormRegister updateRegister={updateRegister} />}
                 {sectionRegister.type === SECTION_REGISTER.history && <HistoryTab />}
                 {sectionRegister.type === SECTION_REGISTER.details && <DetailsTab />}
             </div>
