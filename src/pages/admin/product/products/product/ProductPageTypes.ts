@@ -3,10 +3,6 @@ export interface ILegend{
     legend: string;
 }
 
-export interface IOption{
-    name: string;
-    label: string; 
-}
 
 export interface IProductFields {
     name: string;
