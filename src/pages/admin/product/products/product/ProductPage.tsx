@@ -44,7 +44,7 @@ function ProductsPage() {
                     <TextField
                         id="select-actions-items"
                         select
-                        label="Ações"
+                        // label="Ações"
                         defaultValue=""
                     >
                         <MenuItem value="">
@@ -62,6 +62,12 @@ function ProductsPage() {
                         onClick={() => goToRegisterProductPage(navigate)}
                     >
                         Novo Produto
+                    </Button>
+                    <Button
+                        variant="contained"
+                        onClick={() => goToRegisterProductPage(navigate)}
+                    >
+                        Importar
                     </Button>
                 </Grid>
                 <Grid size={12}>

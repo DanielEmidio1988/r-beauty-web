@@ -54,6 +54,12 @@ function RegisterBrandsPage() {
                 >
                     Novo Produto
                 </Button>
+                <Button
+                    variant="contained"
+                    onClick={() => { }}
+                >
+                    Importar
+                </Button>
             </Grid>
             <Grid container justifyContent="center" size={12}>
                 <Grid size={{ xs: 12, sm: 6  }}>
