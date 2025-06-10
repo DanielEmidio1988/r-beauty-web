@@ -1,8 +1,9 @@
 import { goToRegisterProductPage } from "../../../../../routes/navigate";
 import { useProductPageViewModel } from "./ProductPageViewModel";
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridRowSelectionModel } from '@mui/x-data-grid';
 import { columns } from "./mock";
 import { Button, Grid, MenuItem, TextField, Typography } from "@mui/material";
+import { useState } from "react";
 
 
 function ProductsPage() {
@@ -14,6 +15,8 @@ function ProductsPage() {
         context,
     } = useProductPageViewModel();
     const paginationModel = { page: 0, pageSize: 5 };
+    const [productsSelected, setProductsSelected] = useState<GridRowSelectionModel>({ type: 'include', ids: new Set() });
+
 
 
     return (
@@ -32,9 +35,9 @@ function ProductsPage() {
                 size={12}
                 sx={{ margin: "8px 0" }}
             >
-                <Grid 
-                    container 
-                    size={12} 
+                <Grid
+                    container
+                    size={12}
                     spacing={2}
                     sx={{ margin: "8px 0" }}
                 >
@@ -62,13 +65,19 @@ function ProductsPage() {
                     </Button>
                 </Grid>
                 <Grid size={12}>
+                    {/* Analisar checkbox pq não esta funcionando */}
                     <DataGrid
                         rows={dataProducts}
                         columns={columns}
+                        getRowId={(row) => row.id}
                         initialState={{ pagination: { paginationModel } }}
                         pageSizeOptions={[5, 10]}
                         checkboxSelection
-
+                        onRowSelectionModelChange={(newRowSelectionModel) => {
+                            console.log("newRowSelected ", newRowSelectionModel)
+                            setProductsSelected(newRowSelectionModel);
+                        }}
+                        rowSelectionModel={productsSelected}
                     />
                 </Grid>
             </Grid>

@@ -1,7 +1,7 @@
 import { IHistoryData } from "./IHistoryData";
 
 export interface IProduct{
-    id?: string;
+    id: string;
     id_user: string;
     name: string;
     brand: string;
