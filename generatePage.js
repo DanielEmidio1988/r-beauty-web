@@ -79,6 +79,7 @@ function generatePage(pageName, targetDir) {
 
 function generateView(pageName) {
     return `
+import { Grid } from "@mui/material";
 import style from "./${pageName}.module.scss";
 import { use${pageName}ViewModel } from "./${pageName}ViewModel";
 import { ${pageName}Props } from "./${pageName}Types";
@@ -87,9 +88,13 @@ function ${pageName}(props: ${pageName}Props){
     const {} = use${pageName}ViewModel(props);
 
     return(
-        <div className={style.${pageName.toLocaleLowerCase()}}>
+        <Grid
+            container
+            size={12} 
+            className={style.${pageName.toLocaleLowerCase()}}
+        >
             {/* your code here */}
-        </div>
+        </Grid>
     )
 }
 
@@ -99,6 +104,7 @@ export default ${pageName}
 
 function generateViewPage(pageName) {
     return `
+import { Grid } from "@mui/material";
 import style from "./${pageName}.module.scss";
 import { use${pageName}ViewModel } from "./${pageName}ViewModel";
 
@@ -106,9 +112,13 @@ function ${pageName}(){
     const { navigate } = use${pageName}ViewModel();
 
     return(
-        <div className={style.${pageName.toLocaleLowerCase()}}>
+        <Grid 
+            container
+            size={12}
+            className={style.${pageName.toLocaleLowerCase()}}
+        >
             {/* your code here */}
-        </div>
+        </Grid>
     )
 }
 

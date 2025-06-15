@@ -2,24 +2,24 @@
 import { useNavigate } from "react-router-dom";
 import { useBaseContextData } from "context/BaseContext";
 import { useState } from "react";
-import { IDataCustomer } from "./CustomerTypes";
-// import { } from "./CustomerTypes";
+import { IDataCustomerStatement } from "./CustomerStatementTypes";
+// import { } from "./CustomerStatementTypes";
 
-export function useCustomerModel(){
+export function useCustomerStatementModel(){
     const context = useBaseContextData();
     const navigate = useNavigate();
-    const [dataCustomer, setDataCustomer] = useState<IDataCustomer[]>([]);
+    const [customerStatement, setCustomerStatement] = useState<IDataCustomerStatement[]>([]);
     const [totalRegister, setTotalRegister] = useState<number>(0);
-    const titlePage = "Cadastro de cliente"
+    const titlePage: string = "Extrato do cliente"
 
     return {
         context,
         navigate,
-        titlePage,
+        customerStatement, 
+        setCustomerStatement,
         totalRegister,
         setTotalRegister,
-        dataCustomer, 
-        setDataCustomer
+        titlePage,
     }
 }
     

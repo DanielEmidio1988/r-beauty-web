@@ -1,8 +1,8 @@
-import { useRegisterBrandPageModel } from "./RegisterBrandPageModel";
+import { useBrandPageModel } from "./BrandPageModel";
 import brands from '../../../../../assets/data/brand.json';
 import { useEffect } from "react";
 
-export function useRegisterBrandPageViewModel(){
+export function useBrandPageViewModel(){
     const {
         context, 
         titlePage, 
@@ -10,7 +10,7 @@ export function useRegisterBrandPageViewModel(){
         setDataBrands,
         totalRegister,
         setTotalRegister,
-    } = useRegisterBrandPageModel();
+    } = useBrandPageModel();
 
     useEffect(() => {
         getAllBrands();

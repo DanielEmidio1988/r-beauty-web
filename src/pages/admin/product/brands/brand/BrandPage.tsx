@@ -1,17 +1,17 @@
-import style from "./RegisterBrandPage.module.scss";
-import { useRegisterBrandPageViewModel } from "./RegisterBrandPageViewModel";
+import style from "./BrandPage.module.scss";
+import { useBrandPageViewModel } from "./BrandPageViewModel";
 import { Button, Grid, MenuItem, TextField, Typography } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns } from "./mock";
 
-function RegisterBrandsPage() {
+function BrandsPage() {
     const {
         context,
         titlePage,
         dataBrands,
         totalRegister,
         getAllBrands,
-    } = useRegisterBrandPageViewModel();
+    } = useBrandPageViewModel();
     const paginationModel = { page: 0, pageSize: 5 };
 
     return (
@@ -78,4 +78,4 @@ function RegisterBrandsPage() {
     )
 }
 
-export default RegisterBrandsPage
+export default BrandsPage

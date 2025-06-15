@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "cli_name": "Ana Paula Souza",
+    "cli_phone": "(11) 91234-5678",
+    "osc_openstatement": 350.75,
+    "osc_statusstatement": true
+  },
+  {
+    "id": "2",
+    "cli_name": "Carlos Henrique Lima",
+    "cli_phone": "(21) 99876-5432",
+    "osc_openstatement": 0,
+    "osc_statusstatement": false
+  },
+  {
+    "id": "3",
+    "cli_name": "Juliana Martins",
+    "cli_phone": "(31) 98765-4321",
+    "osc_openstatement": 120.5,
+    "osc_statusstatement": true
+  },
+  {
+    "id": "4",
+    "cli_name": "Ricardo Almeida",
+    "cli_phone": "(41) 97654-3210",
+    "osc_openstatement": 0,
+    "osc_statusstatement": false
+  },
+  {
+    "id": "5",
+    "cli_name": "Fernanda Castro",
+    "cli_phone": "(51) 96543-2109",
+    "osc_openstatement": 89.99,
+    "osc_statusstatement": true
+  },
+  {
+    "id": "6",
+    "cli_name": "Marcos Vinícius",
+    "cli_phone": "(61) 95432-1098",
+    "osc_openstatement": 250.0,
+    "osc_statusstatement": true
+  }
+]

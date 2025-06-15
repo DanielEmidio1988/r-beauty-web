@@ -19,11 +19,11 @@ export function useMenuAdminModel() {
             submenu: [
                 {
                     label: "Cadastro de Clientes",
-                    url_item: () => {},
+                    url_item: () => goToNavigate.goToCustomerPage(navigate),
                 },
                 {
-                    label: "Extrato do Cliente", // vendas passadas e relatórios
-                    url_item: () => {},
+                    label: "Extrato do Cliente",
+                    url_item: () => goToNavigate.goToCustomerStatementPage(navigate),
                 },
             ],
         },
