@@ -5,6 +5,7 @@
 ![Leaflet](https://img.shields.io/badge/Leaflet-199900.svg?style=for-the-badge&logo=Leaflet&logoColor=white)
 ![ReactRouter](https://img.shields.io/badge/React%20Router-CA4245.svg?style=for-the-badge&logo=React-Router&logoColor=white)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white)
+![Material UI](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)
 
 ## 📖 Introdução
 O **r-Beauty** nasceu de uma necessidade real, dentro da minha própria casa.
@@ -27,7 +28,7 @@ O r-Beauty tem como missão *otimizar o tempo e profissionalizar a gestão de co
 
 ## 📢 Últimas Atualizações
 * **Versão:** 2.0
-* **Data de Atualização:** 19/09/2024
+* **Data de Atualização:** 05/11/2025
 
 O **r-Beauty** está em constante atualização para oferecer uma melhor experiência aos usuários. As melhorias serão aplicadas de acordo com os feedbacks, sugestões e estudo de mercado.
 1. Migração de sistema do Google App Script/Google Sheets para React.Js, permitindo uma interface mais moderna, dinâmica e eficiente;  
@@ -53,7 +54,19 @@ O **r-Beauty** está em constante atualização para oferecer uma melhor experi�
 | Leaflet (mapas) | React Icons       |
 |                 | UUID              |
 |                 | Google Charts     |
-|                 | Date Range Picker |
+|                 | Date Range Picker | 
+
+
+## 🏗 Arquitetura MVVC
+A aplicação *r-Beauty* foi construída utilizando a arquitetura MVVC (Model - View - ViewModel - Controller), visando maior organização, escalabilidade e manutenibilidade do código.
+
+### Estrutura dos papéis
+| Camada         | Descrição                                                                                                                                             |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Model**      | Representa os dados da aplicação, incluindo entidades e tipagens globais (`/types`).                                                                  |
+| **View**       | A interface visual renderizada ao usuário, composta por componentes e páginas (`/components`, `/pages`).                                              |
+| **ViewModel**  | Responsável por preparar os dados da `Model` para a `View`, além de gerenciar estados e lógica de exibição (`/context`, `hooks`, funções de `utils`). |
+| **Controller** | Controla o fluxo da aplicação, ações do usuário e integrações com a API (`/routes`, chamadas Axios).                                                  |
 
 
 ## 🎨 Layout

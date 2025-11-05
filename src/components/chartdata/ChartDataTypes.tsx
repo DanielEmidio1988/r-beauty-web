@@ -1,5 +1,7 @@
+import { CurveType } from "@mui/x-charts";
+
 export interface ChartDataProps {
-    data: (number | string)[][];
+    data: SeriesChart;
     chartType: ChartType;
     titleChart: string;
     legend: string;
@@ -18,3 +20,10 @@ export interface IChart {
 export interface IOptionsChart {
     chart: IChart;
 }
+
+
+export type SeriesChart = {
+    data: (number | null)[];
+    label: string;
+    curve?: CurveType;
+}[]

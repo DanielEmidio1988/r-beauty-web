@@ -6,14 +6,34 @@ import style from "./HomeAdminPage.module.scss";
 import { HomeAdminPageProps } from "./HomeAdminPageTypes";
 import { useHomePageViewModel } from "./HomePageViewModel";
 import ChartData from "../../../components/chartdata/ChartData";
+import { Grid } from "@mui/material";
 
 function HomeAdminPage(props: HomeAdminPageProps) {
-    const { balanceSummary, lowInventory, upComingPayment, salesPerformance, legendBalanceSum, optionsBalanceSum} = useHomePageViewModel(props);
+    const { 
+        balanceSummary, 
+        lowInventory, 
+        upComingPayment, 
+        salesPerformance, 
+        legendBalanceSum, 
+        optionsBalanceSum
+    } = useHomePageViewModel(props);
 
     return (
-        <div className={style.homeadmin}>
-            <section className={`${style.dashboardArea} ${style.sectionone}`}>
-                <div className={style.dashboardArea__chartarea}>
+        <Grid 
+            container 
+            spacing={1}
+            size={12} 
+            className={style.homeadmin}
+        >
+            <Grid 
+                container
+                spacing={1}
+                size={12} 
+                component="section"
+            >
+                <Grid 
+                    size={{xs: 12, sm: 6, md: 8}}
+                >
                     <ChartData 
                         data={salesPerformance}
                         titleChart="Relação de Vendas Ultimos 30 dias"
@@ -21,22 +41,34 @@ function HomeAdminPage(props: HomeAdminPageProps) {
                         legend={legendBalanceSum}
                         options={optionsBalanceSum}
                     />
-                </div>
-                <div className={style.dashboardArea__metricarea}>
+                </Grid>
+                <Grid 
+                    className={style.dashboardArea__metricarea}
+                    size={{xs: 12, sm: 6, md: 4}}
+                >
                     <BalanceSummary 
                         summarys={balanceSummary}
                     />
-                </div>
-            </section>
-            <section className={style.dashboardArea}>
-                <div className={style.dashboardArea__lowinventory}>
+                </Grid>
+            </Grid>
+            <Grid 
+                container
+                spacing={1}
+                size={12}
+                component="section"
+            >
+                <Grid 
+                    size={{xs: 12, sm: 6}}
+                >
                     <LowInventory />
-                </div>
-                <div className={style.dashboardArea__upcomingpayments}>
+                </Grid>
+                <Grid 
+                    size={{xs: 12, sm: 6}}
+                >
                     <UpComingPayments />
-                </div>
-            </section>
-        </div>
+                </Grid>
+            </Grid>
+        </Grid>
     )
 }
 

@@ -1,4 +1,4 @@
-@import "../../../assets/scss/styled.scss";
+@use "../../../assets/scss/styled" as *;
 
 .card_service{
     width: calc(33.33% - 20px);

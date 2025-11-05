@@ -28,7 +28,7 @@ function generateComponent(pageName, targetDir) {
     const componentView = generateView(pageName);
     const componentTypes = generateTypes(pageName);
     const componentModel = generateModel(pageName, targetDir);
-    const componentViewModel = generateViewModel(pageName, targetDir); 
+    const componentViewModel = generateViewModel(pageName, targetDir);
     const componentScss = generateScss(pageName, targetDir);
 
     createFile(path.join(componentDir, `${pageName}.tsx`), componentView);
@@ -51,7 +51,7 @@ function generatePage(pageName, targetDir) {
         return;
     }
 
-    const newPageName = pageName + "Page";
+    const newPageName = pageName;
 
     const componentDir = path.join(__dirname, "src", targetDir, newPageName);
 
@@ -65,7 +65,7 @@ function generatePage(pageName, targetDir) {
     const componentView = generateViewPage(newPageName);
     const componentTypes = generateTypes(newPageName);
     const componentModel = generateModelPage(newPageName, targetDir);
-    const componentViewModel = generateViewModelPage(newPageName, targetDir); 
+    const componentViewModel = generateViewModelPage(newPageName, targetDir);
     const componentScss = generateScss(newPageName, targetDir);
 
     createFile(path.join(componentDir, `${newPageName}.tsx`), componentView);
@@ -79,6 +79,7 @@ function generatePage(pageName, targetDir) {
 
 function generateView(pageName) {
     return `
+import { Grid } from "@mui/material";
 import style from "./${pageName}.module.scss";
 import { use${pageName}ViewModel } from "./${pageName}ViewModel";
 import { ${pageName}Props } from "./${pageName}Types";
@@ -87,9 +88,13 @@ function ${pageName}(props: ${pageName}Props){
     const {} = use${pageName}ViewModel(props);
 
     return(
-        <div className={style.${pageName.toLocaleLowerCase()}}>
+        <Grid
+            container
+            size={12} 
+            className={style${pageName.toLocaleLowerCase()}}
+        >
             {/* your code here */}
-        </div>
+        </Grid>
     )
 }
 
@@ -99,16 +104,21 @@ export default ${pageName}
 
 function generateViewPage(pageName) {
     return `
+import { Grid } from "@mui/material";
 import style from "./${pageName}.module.scss";
-import { use${pageName}PageViewModel } from "./${pageName}ViewModel";
+import { use${pageName}ViewModel } from "./${pageName}ViewModel";
 
 function ${pageName}(){
-    const { navigate, context } = use${pageName}ViewModel(props);
+    const { navigate } = use${pageName}ViewModel();
 
     return(
-        <div className={style.${pageName.toLocaleLowerCase()}}>
+        <Grid 
+            container
+            size={12}
+            className={style${pageName.toLocaleLowerCase()}}
+        >
             {/* your code here */}
-        </div>
+        </Grid>
     )
 }
 
@@ -116,23 +126,19 @@ export default ${pageName}
 `;
 };
 
-function generateTypes(pageName){
+function generateTypes(pageName) {
     return `
 export interface ${pageName}Props{}    
     `
 }
 
-function generateViewModel(pageName, targetDir){
+function generateViewModel(pageName, targetDir) {
     const srcDir = path.join(__dirname, 'src');
     const componentDir = path.join(srcDir, targetDir, pageName);
-    let relativePath = path.relative(componentDir, path.join(srcDir, 'utils', 'hooks'));
-
-    relativePath = relativePath.replace(/\\/g, '/');
 
     return `
 import { use${pageName}Model } from "./${pageName}Model";
 import { ${pageName}Props } from "./${pageName}Types";
-import { hooks } from "${relativePath}";
 
 export function use${pageName}ViewModel(props: ${pageName}Props){
     const {} =  use${pageName}Model();
@@ -142,35 +148,28 @@ export function use${pageName}ViewModel(props: ${pageName}Props){
     `
 }
 
-function generateViewModelPage(pageName, targetDir){
+function generateViewModelPage(pageName, targetDir) {
     const srcDir = path.join(__dirname, 'src');
     const componentDir = path.join(srcDir, targetDir, pageName);
-    let relativePath = path.relative(componentDir, path.join(srcDir, 'utils', 'hooks.ts'));
-
-    relativePath = relativePath.replace(/\\/g, '/');
 
     return `
 import { use${pageName}Model } from "./${pageName}Model";
-import { hooks } from "${relativePath}";
 // import { } from "./${pageName}Types";
 
 export function use${pageName}ViewModel(){
     const { navigate } =  use${pageName}Model();
     // your code here
-    return{ navigate, context }
+    return{ navigate }
 }
     `
 }
 
-function generateModel(pageName, targetDir){
+function generateModel(pageName, targetDir) {
     const srcDir = path.join(__dirname, 'src');
     const componentDir = path.join(srcDir, targetDir, pageName);
-    let relativePath = path.relative(componentDir, path.join(srcDir, 'utils', 'hooks'));
 
-    relativePath = relativePath.replace(/\\/g, '/');
 
     return `
-import { hooks } from "${relativePath}";
 // import { } from "./${pageName}Types";
 
 export function use${pageName}Model(){
@@ -180,21 +179,18 @@ export function use${pageName}Model(){
     `
 }
 
-function generateModelPage(pageName, targetDir){
+function generateModelPage(pageName, targetDir) {
     const srcDir = path.join(__dirname, 'src');
     const componentDir = path.join(srcDir, targetDir, pageName);
-    let relativePath = path.relative(componentDir, path.join(srcDir, 'utils', 'hooks'));
-
-    relativePath = relativePath.replace(/\\/g, '/');
 
     return `
-import { hooks } from "${relativePath}";
+import { useNavigate } from "react-router-dom";
 import { useBaseContextData } from "context/BaseContext";
 // import { } from "./${pageName}Types";
 
 export function use${pageName}Model(){
     const context = useBaseContextData();
-    const navigate = hooks.useNavigate();
+    const navigate = useNavigate();
 
     return {
         context,
@@ -208,13 +204,13 @@ function generateScss(pageName, targetDir) {
     const srcDir = path.join(__dirname, 'src');
     const componentDir = path.join(srcDir, targetDir, pageName);
     let relativePath = path.relative(componentDir, path.join(srcDir, 'assets', 'scss', 'styled.scss'));
-    
+
     relativePath = relativePath.replace(/\\/g, '/');
 
     return `
-@import "${relativePath}";
+@use "${relativePath}";
 
-.${pageName.toLocaleLowerCase()}{}
+${pageName.toLocaleLowerCase()}{}
 `;
 }
 
@@ -222,11 +218,11 @@ const command = process.argv[2];
 const pageName = process.argv[3];
 const targetDir = process.argv[4];
 
-if(command === "component"){
+if (command === "component") {
     generateComponent(pageName, targetDir);
-}else if(command === "page"){
+} else if (command === "page") {
     generatePage(pageName, targetDir);
-}else{
+} else {
     console.log("Comando inválido!")
     console.log("Execute o comando generate-item component ou page NOMEITEM DIRETÓRIO")
 }

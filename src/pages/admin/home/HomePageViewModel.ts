@@ -1,3 +1,4 @@
+import { SeriesChart } from "@components/chartdata/ChartDataTypes";
 import { hooks } from "../../../utils/hooks";
 import { ISummary } from "../components/balanceSummary/BalanceSummaryTypes";
 import { useHomePageModel } from "./HomeAdminPageModel";
@@ -59,19 +60,22 @@ export function useHomePageViewModel(props: HomeAdminPageProps) {
     }
 
     function getSalesPerformance() {
-        const data: (string | number)[][] = [
-            ["Dia", "Venda", "Volume"],
-            ["01/10", 1000, 400],
-            ["02/10", 2000, 600],
-            ["03/10", 600, 300],
-            ["04/10", 2500, 900],
-            ["05/10", 3200, 1400],
-            ["06/10", 5900, 2400],
+        const data: SeriesChart = [
+            {
+                data: [2200, 600, 1200, 1500, 1400, 1600, 2500].map(Number),
+                label: "Vendas Jun/06",
+                curve: "linear",
+            },
+            {
+                data: [2300, 1100, 800, 750, 1800, 1800, 2300].map(Number),
+                label: "Vendas Mai/06",
+                curve: "linear",
+            },
         ];
         setSalesPerformance(data)
     }
 
-    function formatDate(date: Date): string{
+    function formatDate(date: Date): string {
         return `${String(date.getDate()).padStart(2, "0")}/${String(date.getMonth() + 1).padStart(2, "0")}`
     };
 

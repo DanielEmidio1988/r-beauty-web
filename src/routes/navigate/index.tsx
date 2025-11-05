@@ -28,6 +28,14 @@ export const goToRegisterProductPage = (navigate: NavigateFunction) => {
     navigate('/admin/product/register-product')
 };
 
+const goToCustomerPage = (navigate: NavigateFunction) => {
+    navigate('/admin/customer/customers')
+};
+
+const goToCustomerStatementPage = (navigate: NavigateFunction) => {
+    navigate('/admin/customer/statementcustomers')
+};
+
 export const goToNavigate = {
     goToHomePage,
     goToLoginPage,
@@ -35,5 +43,7 @@ export const goToNavigate = {
     goToAdminPage,
     goToBrandsPage,
     goToProductsPage,
-    goToRegisterProductPage
+    goToRegisterProductPage,
+    goToCustomerPage,
+    goToCustomerStatementPage
 }

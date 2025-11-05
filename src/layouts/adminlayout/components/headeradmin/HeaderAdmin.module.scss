@@ -1,11 +1,10 @@
-@import "../../../../assets/scss/styled.scss";
+@use "../../../../assets/scss/styled" as *;
 
 .headeradmin{
     background-color: $white-color;
     box-shadow: 4px 4px 4px $gray-color-medium;
     padding: 12px 16px;
-    width: calc(100% + 40px);
-    margin-left: -20px;
+    width: 100%;
 
     .headeradmin___navarea{
 

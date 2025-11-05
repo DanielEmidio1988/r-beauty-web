@@ -1,29 +1,10 @@
-@import "../../../assets/scss/styled.scss";
+@use "../../../assets/scss/styled" as *;
 
 .homeadmin{
-    width: 100%;
 
     .dashboardArea{
-        width: 100%;
-        padding: 8px 12px;
-        display: flex;
-        gap: 20px;
-        min-height: 60vh;
-
-        .dashboardArea__chartarea{
-            width: 70%;
-        }
-
-        .dashboardArea__metricarea{
-            width: 30%;
-        }
-
-        .dashboardArea__lowinventory{
-            width: 45%;
-        }
-
-        .dashboardArea__upcomingpayments{
-            width: 55%;
-        }
+        height: 60vh;
+        // padding: 8px 12px;
+        // border: "1px solid red"
     }
 }

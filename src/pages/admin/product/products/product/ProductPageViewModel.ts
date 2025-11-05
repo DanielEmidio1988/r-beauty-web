@@ -1,4 +1,4 @@
-import { hooks } from "../../../../../utils/hooks";
+import { useEffect } from "react";
 import { useProductPageModel } from "./ProductPageModel";
 import products from "../../../../../assets/data/products.json";
 
@@ -13,7 +13,7 @@ export function useProductPageViewModel(){
         context,
      } = useProductPageModel();
 
-    hooks.useEffect(()=>{
+    useEffect(()=>{
         getAllProducts();
     });
 
@@ -24,11 +24,16 @@ export function useProductPageViewModel(){
         setTotalRegister(totalProducts);
     };
 
+    function handleSelectionChange(ids: number[]){
+        return ids;
+    }
+
     return {
         titlePage,
         dataProducts, 
         totalRegister, 
         navigate,
         context,
+        handleSelectionChange,
     }
 }

@@ -1,16 +1,24 @@
-//Author: Daniel Emidio
-//Github: https://github.com/DanielEmidio1988
+// Author: Daniel Emidio
+// Github: https://github.com/DanielEmidio1988
 
-//Base
-@import "./variables";
-@import "./global";
-@import "./pages";
+// -----------------------------------------------------------------------------
+// Reexporta variáveis para que outros arquivos que façam @use "./styled"
+//    possam acessar diretamente ($white-color, $primary-color, etc.)
+// -----------------------------------------------------------------------------
+@forward "./variables";
 
+// -----------------------------------------------------------------------------
+// Importa (usa) os módulos necessários
+// -----------------------------------------------------------------------------
+@use "./variables" as *;
+@use "./global" as *;
+@use "./pages" as *;
+@use "./section" as *;
 
-@import "./section";
-
-// Styles
-@import "./typografy";
-@import "./buttons";
-@import "./inputs";
-@import "./tables";
+// -----------------------------------------------------------------------------
+//  Importa estilos específicos (tipografia, botões, inputs, tabelas...)
+// -----------------------------------------------------------------------------
+@use "./typografy" as *;
+@use "./buttons" as *;
+@use "./inputs" as *;
+@use "./tables" as *;

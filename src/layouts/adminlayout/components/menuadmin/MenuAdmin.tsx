@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import style from "./MenuAdmin.module.scss";
 import { useMenuAdminViewModel } from "./MenuAdminViewModel";
 
@@ -5,11 +6,16 @@ function MenuAdmin(){
     const { activeMenu, menuItens, openMenu } = useMenuAdminViewModel();
 
     return(
-        <nav className={style.menuadmin}>
-            <div className={style.menuadmin___logoArea}>
+        <Box
+            component="nav" 
+            className={style.menuadmin}
+        >
+            <Box className={style.menuadmin___logoArea}>
                 {/* Logo */}
-            </div>
-            <div className={style.menuadmin___navcontainer}>
+            </Box>
+            <Box 
+                className={style.menuadmin___navcontainer}
+            >
                 <ul className={style.navmenu}>
                 {menuItens && menuItens.map((menu, index)=>{
                     const isActive = activeMenu === index;
@@ -43,9 +49,9 @@ function MenuAdmin(){
                     )
                 })}
                 </ul>
-            </div>
+            </Box>
 
-        </nav>
+        </Box>
     )
 }
 
