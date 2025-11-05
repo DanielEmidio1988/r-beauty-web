@@ -48,6 +48,19 @@ export const routes = createBrowserRouter([
         ]
     },
     {
+        path: "/user",
+        children: [
+            {
+                path: "login",
+                element: React.createElement(LoginPage),
+            },
+            {
+                path: "signup",
+                element: React.createElement(SignUpPage)
+            }
+        ]
+    },
+    {
         path: "*",
         element: React.createElement(Page404),
     }

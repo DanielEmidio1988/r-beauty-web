@@ -32,18 +32,7 @@ function ChartData(props: ChartDataProps){
             <Grid container size={12}>
                 <LineChart
                     xAxis={[{scaleType: 'point',  data: ["01/06", "02/06", "03/06", "04/06", "05/06", "06/06", "07/06"]}]}
-                    series={[
-                        {
-                            data: [2200, 600, 1200, 1500, 1400, 1600, 2500],
-                            label: "Vendas",
-                            curve: "linear",
-                        },
-                        {
-                            data: [26, 20, 18, 19, 17, 18, 22],
-                            label: "Volume",
-                            curve: "linear",
-                        },
-                    ]}
+                    series={props.data}
                 />
             </Grid>
 

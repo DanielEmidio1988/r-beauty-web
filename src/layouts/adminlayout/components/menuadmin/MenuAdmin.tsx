@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import style from "./MenuAdmin.module.scss";
 import { useMenuAdminViewModel } from "./MenuAdminViewModel";
 
@@ -6,14 +6,14 @@ function MenuAdmin(){
     const { activeMenu, menuItens, openMenu } = useMenuAdminViewModel();
 
     return(
-        <Grid
+        <Box
             component="nav" 
             className={style.menuadmin}
         >
-            <Grid className={style.menuadmin___logoArea}>
+            <Box className={style.menuadmin___logoArea}>
                 {/* Logo */}
-            </Grid>
-            <Grid 
+            </Box>
+            <Box 
                 className={style.menuadmin___navcontainer}
             >
                 <ul className={style.navmenu}>
@@ -49,9 +49,9 @@ function MenuAdmin(){
                     )
                 })}
                 </ul>
-            </Grid>
+            </Box>
 
-        </Grid>
+        </Box>
     )
 }
 

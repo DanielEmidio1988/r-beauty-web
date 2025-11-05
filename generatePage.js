@@ -91,7 +91,7 @@ function ${pageName}(props: ${pageName}Props){
         <Grid
             container
             size={12} 
-            className={style.${pageName.toLocaleLowerCase()}}
+            className={style${pageName.toLocaleLowerCase()}}
         >
             {/* your code here */}
         </Grid>
@@ -115,7 +115,7 @@ function ${pageName}(){
         <Grid 
             container
             size={12}
-            className={style.${pageName.toLocaleLowerCase()}}
+            className={style${pageName.toLocaleLowerCase()}}
         >
             {/* your code here */}
         </Grid>
@@ -208,9 +208,9 @@ function generateScss(pageName, targetDir) {
     relativePath = relativePath.replace(/\\/g, '/');
 
     return `
-@import "${relativePath}";
+@use "${relativePath}";
 
-.${pageName.toLocaleLowerCase()}{}
+${pageName.toLocaleLowerCase()}{}
 `;
 }
 

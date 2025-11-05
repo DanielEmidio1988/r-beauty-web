@@ -28,7 +28,7 @@ O r-Beauty tem como missão *otimizar o tempo e profissionalizar a gestão de co
 
 ## 📢 Últimas Atualizações
 * **Versão:** 2.0
-* **Data de Atualização:** 19/09/2024
+* **Data de Atualização:** 05/11/2025
 
 O **r-Beauty** está em constante atualização para oferecer uma melhor experiência aos usuários. As melhorias serão aplicadas de acordo com os feedbacks, sugestões e estudo de mercado.
 1. Migração de sistema do Google App Script/Google Sheets para React.Js, permitindo uma interface mais moderna, dinâmica e eficiente;  
