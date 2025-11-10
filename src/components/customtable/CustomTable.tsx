@@ -19,7 +19,7 @@ import { visuallyHidden } from '@mui/utils';
 import { useCustomTableViewModel } from "./CustomTableViewModel";
 
 export function CustomTable({ headers, rows }: ICustomTableProps) {
-    const {itemsSelected, handleSelectedItem} = useCustomTableViewModel();
+    const { itemsSelected, handleSelectedItem } = useCustomTableViewModel();
 
     return (
         <TableContainer component={Paper}>
@@ -54,34 +54,29 @@ export function CustomTable({ headers, rows }: ICustomTableProps) {
                 </TableRow>
                 <TableBody>
                     {rows.map((row, rowIndex) => (
-                        headers.headersCell.map((headerCell) => (
-                            <TableRow
-                                key={rowIndex}
-                            >
-                                {headers.checkbox && (
-                                    <TableCell>
-                                        <Checkbox
-                                            color="primary"
-                                            checked={
-                                                itemsSelected.includes(row[headerCell.id])
-                                            }
-                                            onChange={() => 
-                                                handleSelectedItem(row[headerCell.id])
-                                            }
-                                        />
-                                    </TableCell>
-                                )}
+                        <TableRow key={row.id ?? rowIndex}>
+                            {headers.checkbox && (
+                                <TableCell padding="checkbox">
+                                    <Checkbox
+                                        color="primary"
+                                        checked={itemsSelected.includes(row.id)}
+                                        onChange={() => handleSelectedItem(row.id)}
+                                    />
+                                </TableCell>
+                            )}
+
+                            {headers.headersCell.map((headerCell) => (
                                 <TableCell
                                     key={headerCell.id}
                                     align={headerCell.numeric ? "center" : "left"}
                                     padding={headerCell.disablePadding ? "none" : "normal"}
                                 >
-                                    {row[headerCell.id] ?? "--"}
+                                    {String(row[headerCell.id as keyof typeof row] ?? "")}
                                 </TableCell>
-                            </TableRow>
-                        ))
+                            ))}
+                        </TableRow>
                     ))}
-               </TableBody>
+                </TableBody>
             </Table>
         </TableContainer>
     )
