@@ -4,6 +4,9 @@ import { DataGrid, GridRowSelectionModel } from '@mui/x-data-grid';
 import { columns } from "./mock";
 import { Button, Grid, MenuItem, TextField, Typography } from "@mui/material";
 import { useState } from "react";
+import { TableContextProvider } from "contexts/tablecontextprovider/TableContextProvider";
+import { IProductsData } from "./ProductPageTypes";
+import { TypeTable } from "contexts/tablecontextprovider/TableContextProviderTypes";
 
 
 function ProductsPage() {
@@ -16,8 +19,6 @@ function ProductsPage() {
     } = useProductPageViewModel();
     const paginationModel = { page: 0, pageSize: 5 };
     const [productsSelected, setProductsSelected] = useState<GridRowSelectionModel>({ type: 'include', ids: new Set() });
-
-
 
     return (
         <Grid container size={12}>
@@ -71,8 +72,15 @@ function ProductsPage() {
                     </Button>
                 </Grid>
                 <Grid size={12}>
-                    {/* Analisar checkbox pq não esta funcionando */}
-                    <DataGrid
+                    <TableContextProvider<IProductsData[]> 
+                        params={{
+                            label: "products",
+                            endpoint: "products",
+                            typeTable: TypeTable.FORM,
+                            checkbox: true,
+                        }}
+                    />
+                    {/* <DataGrid
                         rows={dataProducts}
                         columns={columns}
                         getRowId={(row) => row.id}
@@ -84,7 +92,7 @@ function ProductsPage() {
                             setProductsSelected(newRowSelectionModel);
                         }}
                         rowSelectionModel={productsSelected}
-                    />
+                    /> */}
                 </Grid>
             </Grid>
         </Grid>

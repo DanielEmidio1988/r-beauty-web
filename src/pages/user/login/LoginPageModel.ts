@@ -1,10 +1,10 @@
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 import { hooks } from "../../../utils/hooks";
 import { IFormInput } from "./LoginPageTypes";
 
 export function useLoginPageModel() {
     const { register, handleSubmit, formState: { errors } } = hooks.useForm<IFormInput>();
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     const navigate = hooks.useNavigate();
     
     return { 

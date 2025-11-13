@@ -1,41 +1,29 @@
 
 export interface ICustomTableProps{
-    headers: IHeadersAndColumns;
-    rows: IRowCell[];
+    ariaLabel: string;
+    headers: IHeadersCell[];
+    rows: IRows[];
+    checkbox: boolean;
 }
 
 
-export interface IHeadersAndColumns {
+export interface IHeadersCell {
     /**
      * Interface responsável pela estrutura de tabela
      */
-    headersCell: IHeadCell[];
+    rowId: string;
     label: string;
     order: Order;
     orderBy: string;
     description: string;
     type: string;
-    checkbox: boolean;
     collapse: boolean;
 }
 
-export interface IHeadCell {
-    id: string;
-    numeric: boolean;
-    disablePadding: boolean;
-    label: string;
-}
 
-export interface IRowCell {
-    /**
-     * Interface responsável pela estrutura de linhas de tabela
-     */
+export interface IRows {
     id: string;
-    label: string; // Texto renderizado na linha da tabela
-    columnID: string; // Nome da chave que 
-    mask: string;
-    value: string | number | boolean | Date;
-    onClick?: () => void;
+    [key: string]: string | number | boolean; 
 }
 
 export type Order = "asc" | "desc";

@@ -6,46 +6,49 @@ import {
     TableHead,
     TableRow,
     TablePagination,
-    Collapse,
+    // Collapse,
     Paper,
     Typography,
     Checkbox,
     Box,
 } from "@mui/material";
-import { BsArrowDown } from "react-icons/bs";
-import { BsArrowUp } from "react-icons/bs";
 import { ICustomTableProps } from "./CustomTableTypes";
 import { visuallyHidden } from '@mui/utils';
 import { useCustomTableViewModel } from "./CustomTableViewModel";
 
-export function CustomTable({ headers, rows }: ICustomTableProps) {
-    const { itemsSelected, handleSelectedItem } = useCustomTableViewModel();
+export function CustomTable(props: ICustomTableProps) {
+    const { itemsSelected, handleSelectedItem, localRows, setLocalRows } = useCustomTableViewModel(props);
+    const { headers, checkbox, ariaLabel } = props;
 
     return (
         <TableContainer component={Paper}>
-            <Table aria-label={`table-${headers.label}`}>
+            <Table aria-label={`table-${ariaLabel}`}>
                 <TableRow>
                     <TableHead>
-                        {headers.checkbox && (
+                        {checkbox && (
                             <TableCell padding="checkbox">
                                 <Checkbox
                                     color="primary"
                                 />
                             </TableCell>
                         )}
-                        {headers.headersCell.map((headerCell) => (
+                        {headers.map((headerCell) => (
                             <TableCell
-                                key={headerCell.id}
-                                align={headerCell.numeric ? "center" : "left"}
-                                padding={headerCell.disablePadding ? "none" : "normal"}
-                                sortDirection={headers.orderBy === headerCell.id ? headers.order : false}
+                                key={headerCell.rowId}
+                                sortDirection={
+                                    headerCell.orderBy === headerCell.rowId ?
+                                        headerCell.order : false
+                                }
                             >
                                 <Typography>
                                     {headerCell.label}
                                 </Typography>
-                                {headers.orderBy === headerCell.id && (
+                                {headerCell.orderBy === headerCell.rowId && (
                                     <Box component="span" sx={visuallyHidden}>
-                                        {headers.order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                                        {
+                                            headerCell.order === 'desc' ?
+                                                'sorted descending' : 'sorted ascending'
+                                        }
                                     </Box>
                                 )}
                             </TableCell>
@@ -53,9 +56,14 @@ export function CustomTable({ headers, rows }: ICustomTableProps) {
                     </TableHead>
                 </TableRow>
                 <TableBody>
-                    {rows.map((row, rowIndex) => (
-                        <TableRow key={row.id ?? rowIndex}>
-                            {headers.checkbox && (
+                    {localRows.map((row) => (
+                        <TableRow
+                            key={row.id}
+                            hover
+                        // onClick={row.onClick}
+                        // sx={{ cursor: row.onClick ? "pointer" : "default" }}
+                        >
+                            {checkbox && (
                                 <TableCell padding="checkbox">
                                     <Checkbox
                                         color="primary"
@@ -65,18 +73,33 @@ export function CustomTable({ headers, rows }: ICustomTableProps) {
                                 </TableCell>
                             )}
 
-                            {headers.headersCell.map((headerCell) => (
-                                <TableCell
-                                    key={headerCell.id}
-                                    align={headerCell.numeric ? "center" : "left"}
-                                    padding={headerCell.disablePadding ? "none" : "normal"}
-                                >
-                                    {String(row[headerCell.id as keyof typeof row] ?? "")}
-                                </TableCell>
-                            ))}
+                            {headers.map((headerCell, headerIndex) => {
+
+                                return (
+                                    <TableCell
+                                        key={headerIndex}
+                                    >
+                                        {headerCell.type === "boolean" ?
+                                            (
+                                                <Checkbox
+                                                    color="primary"
+                                                    checked={Boolean(row[headerCell.rowId])}
+                                                />
+                                            )
+                                            :
+                                            (
+                                                <Typography component="p">
+                                                    {String(row[headerCell.rowId] ?? "")}
+                                                </Typography>
+                                            )}
+
+                                    </TableCell>
+                                );
+                            })}
                         </TableRow>
                     ))}
                 </TableBody>
+
             </Table>
         </TableContainer>
     )

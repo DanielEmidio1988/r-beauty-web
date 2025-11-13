@@ -1,7 +1,8 @@
 import { useCustomTableModel } from "./CustomTableModel";
+import { ICustomTableProps } from "./CustomTableTypes";
 
-export function useCustomTableViewModel(){
-    const {itemsSelected, setItemsSelected} = useCustomTableModel();
+export function useCustomTableViewModel(props: ICustomTableProps){
+    const {itemsSelected, setItemsSelected, localRows, setLocalRows} = useCustomTableModel(props);
 
     function handleSelectedItem(item: string){
         setItemsSelected((prev) => {
@@ -15,5 +16,7 @@ export function useCustomTableViewModel(){
     return {
         handleSelectedItem,
         itemsSelected,
+        localRows,
+        setLocalRows,
     }
 }

@@ -1,10 +1,10 @@
 
 import { useNavigate } from "react-router-dom";
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 // import { } from "./RegisterBrandTypes";
 
 export function useRegisterBrandModel(){
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     const navigate = useNavigate();
 
     return {
