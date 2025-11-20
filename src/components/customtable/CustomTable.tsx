@@ -23,11 +23,29 @@ export function CustomTable(props: ICustomTableProps) {
     const [order, setOrder] = useState<Order>("asc");
     const [orderBy, setOrderBy] = useState<string>("");
 
+    const handleSort = (field: string) => {
+        const isAsc = orderBy === field && order === "asc";
+
+        setOrder(isAsc ? "desc" : "asc");
+        setOrderBy(field);
+
+        const sorted = [...localRows].sort((a, b) => {
+            const valueA = a[field];
+            const valueB = b[field];
+
+            if (valueA < valueB) return isAsc ? -1 : 1;
+            if (valueA > valueB) return isAsc ? 1 : -1;
+            return 0;
+        });
+
+        setLocalRows(sorted);
+    };
+
     return (
         <TableContainer component={Paper}>
             <Table aria-label={`table-${ariaLabel}`}>
-                <TableRow>
-                    <TableHead>
+                <TableHead>
+                    <TableRow>
                         {checkbox && (
                             <TableCell padding="checkbox">
                                 <Checkbox
@@ -42,9 +60,9 @@ export function CustomTable(props: ICustomTableProps) {
                                     orderBy === headerCell.rowId ?
                                         order : false
                                 }
-                                onClick={() => {
-                                    setOrderBy(headerCell.rowId);
-                                    setOrder((prev) => prev === "asc" ? "desc" : "asc");
+                                onClick={() => handleSort(headerCell.rowId)}
+                                sx={{
+                                    cursor: "pointer",
                                 }}
                             >
                                 <Typography>
@@ -60,8 +78,8 @@ export function CustomTable(props: ICustomTableProps) {
                                 )}
                             </TableCell>
                         ))}
-                    </TableHead>
-                </TableRow>
+                    </TableRow>
+                </TableHead>
                 <TableBody>
                     {localRows.map((row) => (
                         <TableRow

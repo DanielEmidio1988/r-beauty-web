@@ -2,6 +2,8 @@ import { CustomTable } from "@components/customtable/CustomTable";
 import { ITableContextProviderProps, ITableContextProvider } from "./TableContextProviderTypes";
 import { createContext, useContext } from "react";
 import { useTableContextProviderViewModel } from "./TableContextProviderViewModel";
+import { useQuery } from "@tanstack/react-query";
+import { IRows } from "@components/customtable/CustomTableTypes";
 
 const Context = createContext<ITableContextProvider<unknown> | undefined>(undefined);
 
@@ -11,14 +13,24 @@ export function TableContextProvider<T>({params}: ITableContextProviderProps<T>)
     const getDataTable = () => fetchDataTable(params.endpoint);
     const getHeadersAndColumns = () => fetchHeadersAndColumns(params.endpoint);
 
-    // Incluir React Query para fetchData
+    const {data: columnAndHeaders} = useQuery({
+        queryKey: [`get-header-and-column-${params.endpoint}`],
+        queryFn: () => getHeadersAndColumns(),
+    });
 
+    const {data: rowsTable } = useQuery<IRows[]>({
+        queryKey: [`get-rows-table-${params.endpoint}`],
+        queryFn: () => getDataTable(),
+        enabled: !!columnAndHeaders?.headers?.length
+    });
+
+    console.log("rowsTable ", rowsTable)
     return(
         <Context.Provider value={{fetchData: () => getDataTable()}}>
             <CustomTable
                 ariaLabel={params.label}
-                headers={[]}
-                rows={[]}
+                headers={columnAndHeaders?.headers || []}
+                rows={rowsTable || ([] as IRows[])}
                 checkbox={params.checkbox || false}
             />
         </Context.Provider>

@@ -2,13 +2,14 @@ import mockProducts from "../../assets/data/productsData.json"
 
 import mockHeaderColumnsProducts from "../../assets/data/headerProductsData.json";
 import { IHeadersAndColumns, IHeadersAndColumnsResponse } from "./TableContextProviderTypes";
+import { IRows } from "@components/customtable/CustomTableTypes";
 
-export function useTableContextProviderViewModel(){
+export function useTableContextProviderViewModel() {
 
-    function fetchDataTable<T>(endpoint: string): T{
+    function fetchDataTable(endpoint: string): IRows[] {
         // switch/case temporario
 
-        if(!endpoint) return [] as T;
+        if (!endpoint) return [];
 
         let mockItem;
 
@@ -17,30 +18,30 @@ export function useTableContextProviderViewModel(){
                 mockItem = mockProducts;
                 break;
             default:
-                mockItem = { data: { data: []}}
+                mockItem = { data: { data: [] } }
                 break;
         }
 
         const response = mockItem;
 
-        return response.data.data as T;
+        return response.data.data;
     }
 
-    async function fetchHeadersAndColumns(endpoint: string): Promise<IHeadersAndColumns>{
+    async function fetchHeadersAndColumns(endpoint: string): Promise<IHeadersAndColumns> {
         const response: IHeadersAndColumnsResponse = await mockHeaderColumnsProducts;
 
-        if(response.status >= 200 && response.status <= 299){
-            return {
-                headers: [],
-                transactions: [],
-            }
+        if (response.status >= 200 && response.status <= 299) {
+            return response.data.data;
         }
 
-        return response.data.data;
+        return {
+            headers: [],
+            transactions: [],
+        }
 
     }
 
-    return{
+    return {
         fetchDataTable,
         fetchHeadersAndColumns,
     }
