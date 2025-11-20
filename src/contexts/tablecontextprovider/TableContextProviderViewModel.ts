@@ -1,5 +1,8 @@
 import mockProducts from "../../assets/data/productsData.json"
 
+import mockHeaderColumnsProducts from "../../assets/data/headerProductsData.json";
+import { IHeadersAndColumns, IHeadersAndColumnsResponse } from "./TableContextProviderTypes";
+
 export function useTableContextProviderViewModel(){
 
     function fetchDataTable<T>(endpoint: string): T{
@@ -23,7 +26,22 @@ export function useTableContextProviderViewModel(){
         return response.data.data as T;
     }
 
+    async function fetchHeadersAndColumns(endpoint: string): Promise<IHeadersAndColumns>{
+        const response: IHeadersAndColumnsResponse = await mockHeaderColumnsProducts;
+
+        if(response.status >= 200 && response.status <= 299){
+            return {
+                headers: [],
+                transactions: [],
+            }
+        }
+
+        return response.data.data;
+
+    }
+
     return{
         fetchDataTable,
+        fetchHeadersAndColumns,
     }
 }

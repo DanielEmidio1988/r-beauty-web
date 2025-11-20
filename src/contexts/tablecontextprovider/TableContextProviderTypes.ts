@@ -6,6 +6,14 @@ export interface ITableContextProvider<T> {
     fetchData: () => void;
 }
 
+export interface IHeadersAndColumnsResponse {
+    status: number;
+    data: {
+        data: IHeadersAndColumns;
+    }
+    message?: string;
+}
+
 export interface IParamsTableProvider{
     /**
      * Responsável por parametrizar a solicitação de dados que o componente deve gerar para tabela
@@ -39,7 +47,7 @@ export interface IHeaders {
     rowId: string;
     label: string; // Nome da coluna que será renderizado na tela
     description: string; // Descrição detalhada dos dados exibidos na coluna ao passar o mouse sobre o cabeçalho da coluna
-    type: "string" | "number"; // Tipo de dado da coluna "númerico" ou "texto"
+    type: string; // Tipo de dado da coluna "númerico" ou "texto"
 }
 
 interface ITransactions {

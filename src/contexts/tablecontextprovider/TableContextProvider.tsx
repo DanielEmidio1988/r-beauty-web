@@ -7,13 +7,14 @@ const Context = createContext<ITableContextProvider<unknown> | undefined>(undefi
 
 export function TableContextProvider<T>({params}: ITableContextProviderProps<T>){
 
-    const { fetchDataTable } = useTableContextProviderViewModel();
-    const fetchData = () => fetchDataTable(params.endpoint);
+    const { fetchDataTable, fetchHeadersAndColumns } = useTableContextProviderViewModel();
+    const getDataTable = () => fetchDataTable(params.endpoint);
+    const getHeadersAndColumns = () => fetchHeadersAndColumns(params.endpoint);
 
     // Incluir React Query para fetchData
 
     return(
-        <Context.Provider value={{fetchData: () => fetchData()}}>
+        <Context.Provider value={{fetchData: () => getDataTable()}}>
             <CustomTable
                 ariaLabel={params.label}
                 headers={[]}

@@ -13,11 +13,8 @@ export interface IHeadersCell {
      */
     rowId: string;
     label: string;
-    order: Order;
-    orderBy: string;
     description: string;
     type: string;
-    collapse: boolean;
 }
 
 

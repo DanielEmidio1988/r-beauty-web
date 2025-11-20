@@ -12,13 +12,16 @@ import {
     Checkbox,
     Box,
 } from "@mui/material";
-import { ICustomTableProps } from "./CustomTableTypes";
+import { ICustomTableProps, Order } from "./CustomTableTypes";
 import { visuallyHidden } from '@mui/utils';
 import { useCustomTableViewModel } from "./CustomTableViewModel";
+import { useState } from "react";
 
 export function CustomTable(props: ICustomTableProps) {
     const { itemsSelected, handleSelectedItem, localRows, setLocalRows } = useCustomTableViewModel(props);
     const { headers, checkbox, ariaLabel } = props;
+    const [order, setOrder] = useState<Order>("asc");
+    const [orderBy, setOrderBy] = useState<string>("");
 
     return (
         <TableContainer component={Paper}>
@@ -36,17 +39,21 @@ export function CustomTable(props: ICustomTableProps) {
                             <TableCell
                                 key={headerCell.rowId}
                                 sortDirection={
-                                    headerCell.orderBy === headerCell.rowId ?
-                                        headerCell.order : false
+                                    orderBy === headerCell.rowId ?
+                                        order : false
                                 }
+                                onClick={() => {
+                                    setOrderBy(headerCell.rowId);
+                                    setOrder((prev) => prev === "asc" ? "desc" : "asc");
+                                }}
                             >
                                 <Typography>
                                     {headerCell.label}
                                 </Typography>
-                                {headerCell.orderBy === headerCell.rowId && (
+                                {orderBy === headerCell.rowId && (
                                     <Box component="span" sx={visuallyHidden}>
                                         {
-                                            headerCell.order === 'desc' ?
+                                            order === 'desc' ?
                                                 'sorted descending' : 'sorted ascending'
                                         }
                                     </Box>
