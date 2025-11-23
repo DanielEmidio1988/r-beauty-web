@@ -37,6 +37,7 @@ export function useTableContextProviderViewModel() {
         return {
             headers: [],
             transactions: [],
+            actions: [],
         }
 
     }

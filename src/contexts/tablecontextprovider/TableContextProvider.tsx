@@ -13,26 +13,29 @@ export function TableContextProvider<T>({params}: ITableContextProviderProps<T>)
     const getDataTable = () => fetchDataTable(params.endpoint);
     const getHeadersAndColumns = () => fetchHeadersAndColumns(params.endpoint);
 
-    const {data: columnAndHeaders} = useQuery({
+    const {data: columnAndHeaders, isPending: loadingHeaders } = useQuery({
         queryKey: [`get-header-and-column-${params.endpoint}`],
         queryFn: () => getHeadersAndColumns(),
     });
 
-    const {data: rowsTable } = useQuery<IRows[]>({
+    const {data: rowsTable, isPending: loadingRows } = useQuery<IRows[]>({
         queryKey: [`get-rows-table-${params.endpoint}`],
         queryFn: () => getDataTable(),
         enabled: !!columnAndHeaders?.headers?.length
     });
 
-    console.log("rowsTable ", rowsTable)
     return(
         <Context.Provider value={{fetchData: () => getDataTable()}}>
-            <CustomTable
-                ariaLabel={params.label}
-                headers={columnAndHeaders?.headers || []}
-                rows={rowsTable || ([] as IRows[])}
-                checkbox={params.checkbox || false}
-            />
+            {columnAndHeaders && (
+                <CustomTable
+                    ariaLabel={params.label}
+                    actionLabel={params.actionLabel}
+                    headers={columnAndHeaders}
+                    rows={rowsTable || ([] as IRows[])}
+                    checkbox={params.checkbox || false}
+                    loading={loadingHeaders && loadingRows}
+                />
+            )}
         </Context.Provider>
     ) 
 }

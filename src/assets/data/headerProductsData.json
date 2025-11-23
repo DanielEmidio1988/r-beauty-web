@@ -58,7 +58,26 @@
                     "type": "boolean"
                 }
             ],
-            "transactions": []
+            "transactions": [
+                {
+                    "label": "Novo produto"
+                },
+                {
+                    "label": "Importar"
+                }
+            ],
+            "actions": [
+                {
+                    "label": "Exportar dados",
+                    "endpoint": null,
+                    "value": "0"
+                },
+                {
+                    "label": "Inativar/Ativar selecionados",
+                    "endpoint": "put",
+                    "value": "1"
+                }
+            ]
         }
     }
 }

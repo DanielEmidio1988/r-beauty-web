@@ -22,6 +22,7 @@ export interface IParamsTableProvider{
     endpoint: string; // Endpoint que será feito a requisição dos dados
     checkbox?: boolean; // Define se as linhas da tabela são selecionaveis via checkbox
     typeTable: TypeTable; // Tipo de dado que será renderizado ao clicar sobre a linha da tabela
+    actionLabel?: string; // Valor da label do TextField do tipo "Select" (opcional) 
 }
 
 export enum TypeTable {
@@ -38,6 +39,7 @@ export interface IHeadersAndColumns {
      */
     headers: IHeaders[]; // Estrutura de cabeçalho da tabela
     transactions: ITransactions[];
+    actions: IActions[];
 }
 
 export interface IHeaders {
@@ -50,9 +52,18 @@ export interface IHeaders {
     type: string; // Tipo de dado da coluna "númerico" ou "texto"
 }
 
-interface ITransactions {
+export interface ITransactions {
     /**
-     * Responsável por definir todas as transações liberadas para o tipo de tabela renderizado, como Cadastro, Edição, entre outros.
+     * Responsável por definir todas as transações liberadas para o tipo de tabela renderizado como Cadastro, Importação, entre outros.
      */
     label: string;
+}
+
+export interface IActions {
+    /**
+     * Responsável por definir todas as ações liberadas para o tipo de tabela renderizado como Exportar Dados, Inativar/Ativar selecionados, entre outros.
+     */
+    label: string;
+    value: string;
+    endpoint: string | null;
 }

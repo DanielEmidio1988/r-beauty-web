@@ -1,7 +1,10 @@
+import { IHeadersAndColumns } from "contexts/tablecontextprovider/TableContextProviderTypes";
 
 export interface ICustomTableProps{
     ariaLabel: string;
-    headers: IHeadersCell[];
+    actionLabel?: string;
+    headers: IHeadersAndColumns;
+    loading: boolean;
     rows: IRows[];
     checkbox: boolean;
 }

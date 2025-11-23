@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ICustomTableProps, IRows } from "./CustomTableTypes";
 
-export function useCustomTableModel(props: ICustomTableProps){
+export function useCustomTableModel(){
     const [itemsSelected, setItemsSelected] = useState<string[]>([]);
-    const [localRows, setLocalRows] = useState<IRows[]>(props.rows)
+    const [localRows, setLocalRows] = useState<IRows[]>([])
 
     return {
         itemsSelected,
