@@ -185,11 +185,11 @@ function generateModelPage(pageName, targetDir) {
 
     return `
 import { useNavigate } from "react-router-dom";
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "context/BaseContext";
 // import { } from "./${pageName}Types";
 
 export function use${pageName}Model(){
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     const navigate = useNavigate();
 
     return {

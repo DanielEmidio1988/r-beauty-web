@@ -1,4 +1,4 @@
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 import { hooks } from "@utils/hooks";
 
 export interface CardIconAndContentProps{
@@ -8,7 +8,7 @@ export interface CardIconAndContentProps{
 }
 
 export function useCardIconAndContent(){
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
 
     return { context }
 }

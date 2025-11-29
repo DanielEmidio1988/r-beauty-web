@@ -1,9 +1,9 @@
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 import { hooks } from "../../../../utils/hooks";
 import { ISummary } from "./BalanceSummaryTypes";
 
 export function useBalanceSummaryModel() {
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     
     return {
         context

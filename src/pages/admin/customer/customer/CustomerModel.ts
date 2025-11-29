@@ -1,12 +1,12 @@
 
 import { useNavigate } from "react-router-dom";
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 import { useState } from "react";
 import { IDataCustomer } from "./CustomerTypes";
 // import { } from "./CustomerTypes";
 
 export function useCustomerModel(){
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     const navigate = useNavigate();
     const [dataCustomer, setDataCustomer] = useState<IDataCustomer[]>([]);
     const [totalRegister, setTotalRegister] = useState<number>(0);
