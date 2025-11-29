@@ -23,6 +23,8 @@ export interface IParamsTableProvider{
     checkbox?: boolean; // Define se as linhas da tabela são selecionaveis via checkbox
     typeTable: TypeTable; // Tipo de dado que será renderizado ao clicar sobre a linha da tabela
     actionLabel?: string; // Valor da label do TextField do tipo "Select" (opcional) 
+    title?: string; // Titulo da tabela exibido na página (opcional)
+    totalRegister?: boolean; // Exibe total de registros da tabela (opcional)
 }
 
 export enum TypeTable {

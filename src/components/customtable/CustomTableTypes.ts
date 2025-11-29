@@ -7,6 +7,8 @@ export interface ICustomTableProps{
     loading: boolean;
     rows: IRows[];
     checkbox: boolean;
+    title?: string;
+    totalRegister?: boolean;
 }
 
 

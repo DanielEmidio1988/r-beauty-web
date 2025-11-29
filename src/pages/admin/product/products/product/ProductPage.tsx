@@ -8,22 +8,12 @@ import { TypeTable } from "contexts/tablecontextprovider/TableContextProviderTyp
 
 function ProductsPage() {
     const {
-        titlePage,
-        totalRegister,
         // navigate, // provavelmente utilizarei
         // context, // provavelmente utilizarei
     } = useProductPageViewModel();
 
     return (
         <Grid container size={12}>
-            <Grid size={12} className="titlearea"> {/* Repassar para CustomTable */}
-                <Typography component="h6" className="title">
-                    {titlePage}
-                </Typography>
-                <Typography component="span" className="detail_content counter">
-                    {totalRegister} 
-                </Typography>
-            </Grid>
             <Grid className="tabledatacontainer" size={12} sx={{ margin: "8px 0" }}>
                 <TableContextProvider<IProductsData[]>
                     params={{
@@ -31,6 +21,8 @@ function ProductsPage() {
                         endpoint: "products",
                         typeTable: TypeTable.FORM,
                         checkbox: true,
+                        title: "Cadastro de Produtos",
+                        totalRegister: true,
                     }}
                 />
             </Grid>

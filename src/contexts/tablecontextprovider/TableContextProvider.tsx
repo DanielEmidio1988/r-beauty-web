@@ -34,6 +34,8 @@ export function TableContextProvider<T>({params}: ITableContextProviderProps<T>)
                     rows={rowsTable || ([] as IRows[])}
                     checkbox={params.checkbox || false}
                     loading={loadingHeaders && loadingRows}
+                    title={params.title}
+                    totalRegister={params.totalRegister}
                 />
             )}
         </Context.Provider>

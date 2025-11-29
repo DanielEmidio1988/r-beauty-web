@@ -20,14 +20,16 @@ import { useEffect, useState } from "react";
 import { Actions } from "./components/actions/Actions";
 import { Transactions } from "./components/transactions/Transactions";
 
-export function CustomTable({ 
-    headers, 
-    rows, 
-    checkbox, 
-    ariaLabel, 
-    actionLabel, 
-    loading 
-    }: ICustomTableProps) {
+export function CustomTable({
+    headers,
+    rows,
+    checkbox,
+    ariaLabel,
+    actionLabel,
+    loading,
+    title,
+    totalRegister,
+}: ICustomTableProps) {
     const { itemsSelected, handleSelectedItem, localRows, setLocalRows } = useCustomTableViewModel();
     const [order, setOrder] = useState<Order>("asc");
     const [orderBy, setOrderBy] = useState<string>("");
@@ -52,10 +54,20 @@ export function CustomTable({
 
     useEffect(() => {
         setLocalRows(rows)
-    },[rows])
+    }, [rows])
 
     return (
         <Grid container size={12}>
+            {title && totalRegister && (
+            <Grid size={12} className="titlearea" sx={{marginBottom: 4}}>
+                <Typography component="h6" className="title">
+                    {title}
+                </Typography>
+                <Typography component="span" className="detail_content counter">
+                    {rows.length === 1 ? `${rows.length} registro` : `${rows.length} registros`}
+                </Typography>
+            </Grid>
+            )}
             <Grid size={12} sx={{ display: "flex", gap: 2 }}>
                 <Grid size={{ xs: 12, md: 3 }}>
                     <Actions
@@ -64,7 +76,7 @@ export function CustomTable({
                         labelSelect={actionLabel}
                     />
                 </Grid>
-                <Grid container gap={2} size={{ xs: 12, md: 9}}>
+                <Grid container gap={2} size={{ xs: 12, md: 9 }}>
                     <Transactions transactions={headers.transactions} />
                 </Grid>
             </Grid>

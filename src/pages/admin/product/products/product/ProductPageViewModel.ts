@@ -4,8 +4,6 @@ import products from "../../../../../assets/data/products.json";
 
 export function useProductPageViewModel(){
     const { 
-        titlePage, 
-        totalRegister, 
         navigate,
         context,
      } = useProductPageModel();
@@ -16,8 +14,6 @@ export function useProductPageViewModel(){
     }
 
     return {
-        titlePage, 
-        totalRegister, 
         navigate,
         context,
         handleSelectionChange,
