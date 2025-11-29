@@ -1,4 +1,4 @@
-@import "../../../assets/scss/styled.scss";
+@use "../../../assets/scss/styled" as *;
 
 .signupPage{
     height: 100vh;

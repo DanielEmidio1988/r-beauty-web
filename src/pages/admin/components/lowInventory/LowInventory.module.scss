@@ -1,4 +1,4 @@
-@import "../../../../assets/scss/styled.scss";
+@use "../../../../assets/scss/styled" as *;
 
 .lowInventory{
     height: 300px;

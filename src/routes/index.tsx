@@ -1,13 +1,13 @@
 import { RouterProvider } from "react-router-dom";
-import { ProviderData } from "../context/BaseContext";
-import "../assets/scss/styled.scss"
+import { BaseContextProvider } from "../contexts/basecontextprovider/BaseContext";
+import "../assets/scss/styled.scss";
 import { routes } from "./useRoutes";
 
 function Router(){
     return (
-    <ProviderData>
+    <BaseContextProvider>
         <RouterProvider router={routes} />
-    </ProviderData>
+    </BaseContextProvider>
     )
 }
 

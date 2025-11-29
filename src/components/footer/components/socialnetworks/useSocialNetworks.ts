@@ -1,5 +1,5 @@
 import React from "react";
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 import { BsLinkedin, BsGithub, BsFillEnvelopeFill } from "react-icons/bs";
 import { hooks } from "@utils/hooks";
 
@@ -11,7 +11,7 @@ interface IMenu {
 }
 
 export function useSocialNetworks() {
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     const menus: IMenu[] = [
         {
             icon: React.createElement(BsLinkedin),

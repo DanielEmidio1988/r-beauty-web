@@ -1,0 +1,83 @@
+{
+    "status": 200,
+    "data": {
+        "data": {
+            "headers": [
+                {
+                    "rowId": "id",
+                    "label": "ID",
+                    "description": "",
+                    "type": "string"
+                },
+                {
+                    "rowId": "name",
+                    "label": "Produto",
+                    "description": "",
+                    "type": "string"
+                },
+                {
+                    "rowId": "brand",
+                    "label": "Marca",
+                    "description": "",
+                    "type": "string"
+                },
+                {
+                    "rowId": "stock",
+                    "label": "Estoque",
+                    "description": "",
+                    "type": "number"
+                },
+                {
+                    "rowId": "saleValue",
+                    "label": "Preço de venda",
+                    "description": "",
+                    "type": "number"
+                },
+                {
+                    "rowId": "suggestedSale",
+                    "label": "Preço sugerido de venda",
+                    "description": "Valor de venda sugerido pelo sistema com base no percentual de lucro informado na marca",
+                    "type": "number"
+                },
+                {
+                    "rowId": "promotionalValue",
+                    "label": "Preço promocional",
+                    "description": "Valor de venda aplicado na venda enquanto a promoção vinculada estiver ativa",
+                    "type": "number"
+                },
+                {
+                    "rowId": "cost",
+                    "label": "Preço de custo",
+                    "description": "",
+                    "type": "number"
+                },
+                {
+                    "rowId": "productUnavailable",
+                    "label": "Produto ativo",
+                    "description": "",
+                    "type": "boolean"
+                }
+            ],
+            "transactions": [
+                {
+                    "label": "Novo produto"
+                },
+                {
+                    "label": "Importar"
+                }
+            ],
+            "actions": [
+                {
+                    "label": "Exportar dados",
+                    "endpoint": null,
+                    "value": "0"
+                },
+                {
+                    "label": "Inativar/Ativar selecionados",
+                    "endpoint": "put",
+                    "value": "1"
+                }
+            ]
+        }
+    }
+}

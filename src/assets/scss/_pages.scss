@@ -1,4 +1,4 @@
-@import "./variables";
+@use "./variables" as *;
 
 .pageadmin{
     
@@ -46,7 +46,7 @@
             .sections-data-register{
                 margin-top: -72px;
                 position: relative;
-                -index: -1;
+                z-index: -1;
 
                 .btn-data-register{
                     border-radius: 0;

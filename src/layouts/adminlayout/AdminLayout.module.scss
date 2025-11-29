@@ -1,6 +1,6 @@
 
-@import "../../assets/scss/styled.scss";
-@import "../../assets/scss/variables";
+@use "../../assets/scss/styled" as *;
+@use "../../assets/scss/variables";
 
 .adminlayout{
     width: 100%;

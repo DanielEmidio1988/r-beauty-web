@@ -3,10 +3,6 @@ export interface ILegend{
     legend: string;
 }
 
-export interface IOption{
-    name: string;
-    label: string; 
-}
 
 export interface IProductFields {
     name: string;
@@ -14,4 +10,21 @@ export interface IProductFields {
     legend: string;
     type: string;
     options?: []
+}
+
+export interface IProductsData {
+    id: string;
+    idUser: string;
+    name: string;
+    brand: string;
+    profit: number;
+    cost: number;
+    suggestedSale: number;
+    saleValue: number;
+    promotionalValue: number;
+    activePromotion: boolean;
+    promotionName: string;
+    promotionExpirationDate: string;
+    stock: number;
+    productUnavailable: boolean;
 }

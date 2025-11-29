@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "cli_name": "Ana Paula Souza",
+    "cli_phone": "(11) 91234-5678",
+    "cli_email": "ana.souza@example.com",
+    "cli_address": "Rua das Flores, 123 - São Paulo/SP"
+  },
+  {
+    "id": "2",
+    "cli_name": "Carlos Henrique Lima",
+    "cli_phone": "(21) 99876-5432",
+    "cli_email": "carlos.lima@example.com",
+    "cli_address": "Avenida Brasil, 456 - Rio de Janeiro/RJ"
+  },
+  {
+    "id": "3",
+    "cli_name": "Juliana Martins",
+    "cli_phone": "(31) 98765-4321",
+    "cli_email": "juliana.martins@example.com",
+    "cli_address": "Rua Goiás, 789 - Belo Horizonte/MG"
+  },
+  {
+    "id": "4",
+    "cli_name": "Ricardo Almeida",
+    "cli_phone": "(41) 97654-3210",
+    "cli_email": "ricardo.almeida@example.com",
+    "cli_address": "Av. Curitiba, 321 - Curitiba/PR"
+  },
+  {
+    "id": "5",
+    "cli_name": "Fernanda Castro",
+    "cli_phone": "(51) 96543-2109",
+    "cli_email": "fernanda.castro@example.com",
+    "cli_address": "Rua Porto Alegre, 654 - Porto Alegre/RS"
+  },
+  {
+    "id": "6",
+    "cli_name": "Marcos Vinícius",
+    "cli_phone": "(61) 95432-1098",
+    "cli_email": "marcos.vinicius@example.com",
+    "cli_address": "Quadra 12, Conjunto B - Brasília/DF"
+  },
+  {
+    "id": "7",
+    "cli_name": "Patrícia Mendes",
+    "cli_phone": "(71) 94321-0987",
+    "cli_email": "patricia.mendes@example.com",
+    "cli_address": "Rua Salvador, 987 - Salvador/BA"
+  },
+  {
+    "id": "8",
+    "cli_name": "André Luiz Ribeiro",
+    "cli_phone": "(85) 93210-9876",
+    "cli_email": "andre.ribeiro@example.com",
+    "cli_address": "Av. Fortaleza, 159 - Fortaleza/CE"
+  },
+  {
+    "id": "9",
+    "cli_name": "Luciana Alves",
+    "cli_phone": "(95) 92109-8765",
+    "cli_email": "luciana.alves@example.com",
+    "cli_address": "Rua Boa Vista, 753 - Boa Vista/RR"
+  },
+  {
+    "id": "10",
+    "cli_name": "Pedro Santos",
+    "cli_phone": "(62) 91098-7654",
+    "cli_email": "pedro.santos@example.com",
+    "cli_address": "Av. Goiás, 852 - Goiânia/GO"
+  }
+]

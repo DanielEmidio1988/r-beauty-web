@@ -1,20 +1,11 @@
-import { useBaseContextData } from "context/BaseContext";
-import { hooks } from "../../../../../utils/hooks";
-import { IProduct } from "../../../../../types/IProduct";
+import { useNavigate } from "react-router-dom";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 
 export function useProductPageModel(){
-    const titlePage: string = "Cadastro de Produtos";
-    const [ dataProducts, setDataProducts ] = hooks.useState<IProduct[] | []>([]);
-    const [totalRegister, setTotalRegister] = hooks.useState<String>("0 registro");
-    const navigate = hooks.useNavigate();
-    const context = useBaseContextData();
+    const navigate = useNavigate();
+    const context = useBaseContextProvider();
 
     return {
-        titlePage,
-        dataProducts, 
-        setDataProducts,
-        totalRegister, 
-        setTotalRegister,
         navigate,
         context,
     };

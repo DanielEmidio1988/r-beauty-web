@@ -1,4 +1,4 @@
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 import { hooks } from "../../utils/hooks";
 import {BsBox2Fill, BsGraphUpArrow, BsTagFill, BsCreditCardFill, BsBarChartFill, BsFillPeopleFill} from "react-icons/bs";
 import React from "react";
@@ -13,7 +13,7 @@ interface IService {
 }
 
 export function useHomePage() {
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     const navigate = hooks.useNavigate();
     const services: IService[] = [
         {

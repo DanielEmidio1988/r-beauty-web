@@ -1,4 +1,4 @@
-import { useBaseContextData } from "context/BaseContext";
+import { useBaseContextProvider } from "contexts/basecontextprovider/BaseContext";
 import { hooks } from "@utils/hooks";
 
 export interface FooterProps{};
@@ -9,7 +9,7 @@ interface IMenu{
 }
 
 export function useFooter(){
-    const context = useBaseContextData();
+    const context = useBaseContextProvider();
     const menus: IMenu[] = [
         {
             item: "Sobre",
